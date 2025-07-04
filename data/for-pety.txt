@@ -1,0 +1,1585 @@
+(venv) PS D:\osint\ultidork\code> python main.py
+[+] Loading targets from ..\utidork's_target_list_first.json
+[+] Loaded 84 targets.
+
+[>] Scanning: https://www.bybit.com".to_string()
+2025-07-01 13:46:07,357 - WARNING - Proxy test failed for http://www.bybit.com".to_string():8080 (ClientError): Cannot connect to host www.bybit.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] www.bybit.com".to_string() failed test: Connection error: Cannot connect to host www.bybit.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: https://koho.ca".to_string()
+2025-07-01 13:46:08,365 - WARNING - Proxy test failed for http://koho.ca".to_string():8080 (ClientError): Cannot connect to host koho.ca".to_string():8080 ssl:default [getaddrinfo failed]
+[-] koho.ca".to_string() failed test: Connection error: Cannot connect to host koho.ca".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.monzo.com*.monzo.com*".to_string()
+2025-07-01 13:46:09,373 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*".to_string():8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com*".to_string() failed test: Connection error: Cannot connect to host *.monzo.com*.monzo.com*".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: .prod-ffs.io".to_string()
+2025-07-01 13:46:10,381 - ERROR - An unexpected error occurred during proxy test for http://.prod-ffs.io".to_string():8080: 'idna' codec can't encode character '\x2e' in position 0: label empty
+[-] .prod-ffs.io".to_string() failed test: An unexpected error occurred: 'idna' codec can't encode character '\x2e' in position 0: label empty
+[>] Scanning: co.uk.getmondo".to_string()
+2025-07-01 13:46:11,389 - WARNING - Proxy test failed for http://co.uk.getmondo".to_string():8080 (ClientError): Cannot connect to host co.uk.getmondo".to_string():8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo".to_string() failed test: Connection error: Cannot connect to host co.uk.getmondo".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:12,395 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host api.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] api.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host api.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: auth.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:13,399 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host auth.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] auth.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host auth.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: login-api.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:14,403 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host login-api.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] login-api.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host login-api.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: login.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:15,407 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host login.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] login.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host login.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: onboarding-api.truelayer.com".to_string()
+2025-07-01 13:46:16,411 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com".to_string():8080 (ClientError): Cannot connect to host onboarding-api.truelayer.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] onboarding-api.truelayer.com".to_string() failed test: Connection error: Cannot connect to host onboarding-api.truelayer.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: pay-api.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:17,414 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host pay-api.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] pay-api.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host pay-api.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: pay.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:18,419 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host pay.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] pay.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host pay.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: paydirect.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:19,423 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host paydirect.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] paydirect.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host paydirect.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: payment.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:20,427 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host payment.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] payment.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host payment.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: payouts.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:21,431 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host payouts.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: users-api.truelayer.com".to_string()
+2025-07-01 13:46:22,436 - WARNING - Proxy test failed for http://users-api.truelayer.com".to_string():8080 (ClientError): Cannot connect to host users-api.truelayer.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] users-api.truelayer.com".to_string() failed test: Connection error: Cannot connect to host users-api.truelayer.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: console-backend.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:23,441 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host console-backend.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] console-backend.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host console-backend.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: console.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:24,446 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host console.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: hpp.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:25,454 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host hpp.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: webhooks.truelayer-sandbox.com".to_string()
+2025-07-01 13:46:26,462 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com".to_string():8080 (ClientError): Cannot connect to host webhooks.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] webhooks.truelayer-sandbox.com".to_string() failed test: Connection error: Cannot connect to host webhooks.truelayer-sandbox.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.cloud".to_string()
+2025-07-01 13:46:27,466 - WARNING - Proxy test failed for http://*.truelayer.cloud".to_string():8080 (ClientError): Cannot connect to host *.truelayer.cloud".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud".to_string() failed test: Connection error: Cannot connect to host *.truelayer.cloud".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.com".to_string()
+2025-07-01 13:46:28,471 - WARNING - Proxy test failed for http://*.truelayer.com".to_string():8080 (ClientError): Cannot connect to host *.truelayer.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com".to_string() failed test: Connection error: Cannot connect to host *.truelayer.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.io".to_string()
+2025-07-01 13:46:29,475 - WARNING - Proxy test failed for http://*.truelayer.io".to_string():8080 (ClientError): Cannot connect to host *.truelayer.io".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io".to_string() failed test: Connection error: Cannot connect to host *.truelayer.io".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.sqills.com".to_string()
+2025-07-01 13:46:30,479 - WARNING - Proxy test failed for http://*.sqills.com".to_string():8080 (ClientError): Cannot connect to host *.sqills.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com".to_string() failed test: Connection error: Cannot connect to host *.sqills.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.sqills.team".to_string()
+2025-07-01 13:46:31,485 - WARNING - Proxy test failed for http://*.sqills.team".to_string():8080 (ClientError): Cannot connect to host *.sqills.team".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team".to_string() failed test: Connection error: Cannot connect to host *.sqills.team".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.cz.allegrosandbox.pl".to_string()
+2025-07-01 13:46:32,491 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl".to_string():8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl".to_string() failed test: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.pl.allegrosandbox.pl".to_string()
+2025-07-01 13:46:33,496 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl".to_string():8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl".to_string() failed test: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.sk.allegrosandbox.pl".to_string()
+2025-07-01 13:46:34,501 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl".to_string():8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl".to_string() failed test: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: alchemy.veriff.com".to_string()
+2025-07-01 13:46:35,506 - WARNING - Proxy test failed for http://alchemy.veriff.com".to_string():8080 (ClientError): Cannot connect to host alchemy.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] alchemy.veriff.com".to_string() failed test: Connection error: Cannot connect to host alchemy.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.flamingo-eu.veriff.com".to_string()
+2025-07-01 13:46:36,511 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com".to_string():8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com".to_string() failed test: Connection error: Cannot connect to host api.flamingo-eu.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.us.veriff.me".to_string()
+2025-07-01 13:46:37,515 - WARNING - Proxy test failed for http://api.us.veriff.me".to_string():8080 (ClientError): Cannot connect to host api.us.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[-] api.us.veriff.me".to_string() failed test: Connection error: Cannot connect to host api.us.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.veriff.me".to_string()
+2025-07-01 13:46:38,520 - WARNING - Proxy test failed for http://api.veriff.me".to_string():8080 (ClientError): Cannot connect to host api.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[-] api.veriff.me".to_string() failed test: Connection error: Cannot connect to host api.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: com.veriff.demo".to_string()
+2025-07-01 13:46:39,526 - WARNING - Proxy test failed for http://com.veriff.demo".to_string():8080 (ClientError): Cannot connect to host com.veriff.demo".to_string():8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo".to_string() failed test: Connection error: Cannot connect to host com.veriff.demo".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: louvre.veriff.me".to_string()
+2025-07-01 13:46:40,537 - WARNING - Proxy test failed for http://louvre.veriff.me".to_string():8080 (ClientError): Cannot connect to host louvre.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[-] louvre.veriff.me".to_string() failed test: Connection error: Cannot connect to host louvre.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: magic.veriff.me".to_string()
+2025-07-01 13:46:41,545 - WARNING - Proxy test failed for http://magic.veriff.me".to_string():8080 (ClientError): Cannot connect to host magic.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[-] magic.veriff.me".to_string() failed test: Connection error: Cannot connect to host magic.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: station.veriff.com".to_string()
+2025-07-01 13:46:42,554 - WARNING - Proxy test failed for http://station.veriff.com".to_string():8080 (ClientError): Cannot connect to host station.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] station.veriff.com".to_string() failed test: Connection error: Cannot connect to host station.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: stationapi.veriff.com".to_string()
+2025-07-01 13:46:43,563 - WARNING - Proxy test failed for http://stationapi.veriff.com".to_string():8080 (ClientError): Cannot connect to host stationapi.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] stationapi.veriff.com".to_string() failed test: Connection error: Cannot connect to host stationapi.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.veriff.com".to_string()
+2025-07-01 13:46:44,573 - WARNING - Proxy test failed for http://*.veriff.com".to_string():8080 (ClientError): Cannot connect to host *.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com".to_string() failed test: Connection error: Cannot connect to host *.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: developers.veriff.me".to_string()
+2025-07-01 13:46:45,580 - WARNING - Proxy test failed for http://developers.veriff.me".to_string():8080 (ClientError): Cannot connect to host developers.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[-] developers.veriff.me".to_string() failed test: Connection error: Cannot connect to host developers.veriff.me".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: www.veriff.com".to_string()
+2025-07-01 13:46:46,590 - WARNING - Proxy test failed for http://www.veriff.com".to_string():8080 (ClientError): Cannot connect to host www.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] www.veriff.com".to_string() failed test: Connection error: Cannot connect to host www.veriff.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: https://*.saytechnologies.com".to_string()
+2025-07-01 13:46:47,596 - WARNING - Proxy test failed for http://*.saytechnologies.com".to_string():8080 (ClientError): Cannot connect to host *.saytechnologies.com".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com".to_string() failed test: Connection error: Cannot connect to host *.saytechnologies.com".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: https://*.say.rocks".to_string()
+2025-07-01 13:46:48,602 - WARNING - Proxy test failed for http://*.say.rocks".to_string():8080 (ClientError): Cannot connect to host *.say.rocks".to_string():8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks".to_string() failed test: Connection error: Cannot connect to host *.say.rocks".to_string():8080 ssl:default [getaddrinfo failed]
+[>] Scanning: https://www.bybit.com
+2025-07-01 13:47:05,049 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed test: Proxy test timed out.
+[>] Scanning: https://koho.ca
+2025-07-01 13:47:22,049 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed test: Proxy test timed out.
+[>] Scanning: *.monzo.com*.monzo.com*
+2025-07-01 13:47:23,056 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed test: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: .prod-ffs.io
+2025-07-01 13:47:24,061 - ERROR - An unexpected error occurred during proxy test for http://.prod-ffs.io:8080: 'idna' codec can't encode character '\x2e' in position 0: label empty
+[-] .prod-ffs.io failed test: An unexpected error occurred: 'idna' codec can't encode character '\x2e' in position 0: label empty
+[>] Scanning: co.uk.getmondo
+2025-07-01 13:47:25,220 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed test: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.truelayer-sandbox.com
+2025-07-01 13:47:26,951 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[>] Scanning: auth.truelayer-sandbox.com
+2025-07-01 13:47:28,686 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[>] Scanning: login-api.truelayer-sandbox.com
+2025-07-01 13:47:30,523 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[>] Scanning: login.truelayer-sandbox.com
+2025-07-01 13:47:32,245 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[>] Scanning: onboarding-api.truelayer.com
+2025-07-01 13:47:34,008 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed test: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[>] Scanning: pay-api.truelayer-sandbox.com
+2025-07-01 13:47:35,724 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[>] Scanning: pay.truelayer-sandbox.com
+2025-07-01 13:47:37,451 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[>] Scanning: paydirect.truelayer-sandbox.com
+2025-07-01 13:47:39,171 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[>] Scanning: payment.truelayer-sandbox.com
+2025-07-01 13:47:40,899 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[>] Scanning: payouts.truelayer-sandbox.com
+2025-07-01 13:47:42,046 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed test: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: users-api.truelayer.com
+2025-07-01 13:47:43,790 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed test: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[>] Scanning: console-backend.truelayer-sandbox.com
+2025-07-01 13:47:45,514 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[>] Scanning: console.truelayer-sandbox.com
+2025-07-01 13:47:46,664 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed test: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: hpp.truelayer-sandbox.com
+2025-07-01 13:47:47,812 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed test: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: webhooks.truelayer-sandbox.com
+2025-07-01 13:47:49,530 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[>] Scanning: *.truelayer.cloud
+2025-07-01 13:47:50,536 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed test: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.com
+2025-07-01 13:47:51,544 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed test: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.io
+2025-07-01 13:47:52,553 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed test: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.sqills.com
+2025-07-01 13:47:53,562 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed test: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.sqills.team
+2025-07-01 13:47:54,568 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed test: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.cz.allegrosandbox.pl
+2025-07-01 13:47:55,576 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.pl.allegrosandbox.pl
+2025-07-01 13:47:56,584 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.sk.allegrosandbox.pl
+2025-07-01 13:47:57,595 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: alchemy.veriff.com
+2025-07-01 13:48:14,048 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed test: Proxy test timed out.
+[>] Scanning: api.flamingo-eu.veriff.com
+2025-07-01 13:48:15,211 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed test: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.us.veriff.me
+2025-07-01 13:48:32,057 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed test: Proxy test timed out.
+[>] Scanning: api.veriff.me
+2025-07-01 13:48:49,050 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed test: Proxy test timed out.
+[>] Scanning: com.veriff.demo
+2025-07-01 13:48:50,206 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed test: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: louvre.veriff.me
+2025-07-01 13:49:07,044 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed test: Proxy test timed out.
+[>] Scanning: magic.veriff.me
+2025-07-01 13:49:24,050 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed test: Proxy test timed out.
+[>] Scanning: station.veriff.com
+2025-07-01 13:49:41,052 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed test: Proxy test timed out.
+[>] Scanning: stationapi.veriff.com
+2025-07-01 13:49:58,041 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed test: Proxy test timed out.
+[>] Scanning: *.veriff.com
+2025-07-01 13:49:59,051 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed test: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: developers.veriff.me
+2025-07-01 13:50:16,043 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed test: Proxy test timed out.
+[>] Scanning: www.veriff.com
+2025-07-01 13:50:33,041 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed test: Proxy test timed out.
+[>] Scanning: https://*.saytechnologies.com
+2025-07-01 13:50:34,046 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed test: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: https://*.say.rocks
+2025-07-01 13:50:35,051 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed test: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+
+[✓] Scanning complete.
+(venv) PS D:\osint\ultidork\code> python main.py
+[+] Loading targets from ..\utidork's_target_list_first.json
+[+] Loaded 82 targets.
+
+[>] Scanning: https://www.bybit.com
+2025-07-01 13:58:15,046 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed test: Proxy test timed out.
+[>] Scanning: https://koho.ca
+2025-07-01 13:58:32,052 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed test: Proxy test timed out.
+[>] Scanning: *.monzo.com*.monzo.com*
+2025-07-01 13:58:33,060 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed test: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: co.uk.getmondo
+2025-07-01 13:58:34,217 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed test: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.truelayer-sandbox.com
+2025-07-01 13:58:35,946 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[>] Scanning: auth.truelayer-sandbox.com
+2025-07-01 13:58:37,853 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[>] Scanning: login-api.truelayer-sandbox.com
+2025-07-01 13:58:39,590 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[>] Scanning: login.truelayer-sandbox.com
+2025-07-01 13:58:41,309 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[>] Scanning: onboarding-api.truelayer.com
+2025-07-01 13:58:43,036 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed test: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[>] Scanning: pay-api.truelayer-sandbox.com
+2025-07-01 13:58:44,759 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[>] Scanning: pay.truelayer-sandbox.com
+2025-07-01 13:58:46,477 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[>] Scanning: paydirect.truelayer-sandbox.com
+2025-07-01 13:58:48,210 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[>] Scanning: payment.truelayer-sandbox.com
+2025-07-01 13:58:49,940 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[>] Scanning: payouts.truelayer-sandbox.com
+2025-07-01 13:58:51,090 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed test: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: users-api.truelayer.com
+2025-07-01 13:58:52,809 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed test: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[>] Scanning: console-backend.truelayer-sandbox.com
+2025-07-01 13:58:54,529 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[>] Scanning: console.truelayer-sandbox.com
+2025-07-01 13:58:55,673 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed test: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: hpp.truelayer-sandbox.com
+2025-07-01 13:58:56,819 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed test: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: webhooks.truelayer-sandbox.com
+2025-07-01 13:58:58,543 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[>] Scanning: *.truelayer.cloud
+2025-07-01 13:58:59,550 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed test: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.com
+2025-07-01 13:59:00,556 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed test: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.io
+2025-07-01 13:59:01,565 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed test: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.sqills.com
+2025-07-01 13:59:02,571 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed test: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.sqills.team
+2025-07-01 13:59:03,576 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed test: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.cz.allegrosandbox.pl
+2025-07-01 13:59:04,584 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.pl.allegrosandbox.pl
+2025-07-01 13:59:05,592 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.sk.allegrosandbox.pl
+2025-07-01 13:59:06,604 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: alchemy.veriff.com
+2025-07-01 13:59:23,056 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed test: Proxy test timed out.
+[>] Scanning: api.flamingo-eu.veriff.com
+2025-07-01 13:59:24,205 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed test: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.us.veriff.me
+2025-07-01 13:59:41,042 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed test: Proxy test timed out.
+[>] Scanning: api.veriff.me
+2025-07-01 13:59:58,042 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed test: Proxy test timed out.
+[>] Scanning: com.veriff.demo
+2025-07-01 13:59:59,221 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed test: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: louvre.veriff.me
+2025-07-01 14:00:16,042 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed test: Proxy test timed out.
+[>] Scanning: magic.veriff.me
+2025-07-01 14:00:33,052 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed test: Proxy test timed out.
+[>] Scanning: station.veriff.com
+2025-07-01 14:00:50,053 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed test: Proxy test timed out.
+[>] Scanning: stationapi.veriff.com
+2025-07-01 14:01:07,048 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed test: Proxy test timed out.
+[>] Scanning: *.veriff.com
+2025-07-01 14:01:08,053 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed test: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: developers.veriff.me
+2025-07-01 14:01:25,049 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed test: Proxy test timed out.
+[>] Scanning: www.veriff.com
+2025-07-01 14:01:42,046 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed test: Proxy test timed out.
+[>] Scanning: https://*.saytechnologies.com
+2025-07-01 14:01:43,053 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed test: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: https://*.say.rocks
+2025-07-01 14:01:44,065 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed test: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: https://www.bybit.com
+2025-07-01 14:02:01,056 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed test: Proxy test timed out.
+[>] Scanning: https://koho.ca
+2025-07-01 14:02:18,042 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed test: Proxy test timed out.
+[>] Scanning: *.monzo.com*.monzo.com*
+2025-07-01 14:02:19,047 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed test: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: co.uk.getmondo
+2025-07-01 14:02:20,191 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed test: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.truelayer-sandbox.com
+2025-07-01 14:02:21,777 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[>] Scanning: auth.truelayer-sandbox.com
+2025-07-01 14:02:23,370 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[>] Scanning: login-api.truelayer-sandbox.com
+2025-07-01 14:02:24,959 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[>] Scanning: login.truelayer-sandbox.com
+2025-07-01 14:02:26,568 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[>] Scanning: onboarding-api.truelayer.com
+2025-07-01 14:02:28,156 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed test: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[>] Scanning: pay-api.truelayer-sandbox.com
+2025-07-01 14:02:29,895 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[>] Scanning: pay.truelayer-sandbox.com
+2025-07-01 14:02:31,472 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[>] Scanning: paydirect.truelayer-sandbox.com
+2025-07-01 14:02:33,231 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[>] Scanning: payment.truelayer-sandbox.com
+2025-07-01 14:02:34,813 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[>] Scanning: payouts.truelayer-sandbox.com
+2025-07-01 14:02:35,957 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed test: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: users-api.truelayer.com
+2025-07-01 14:02:37,541 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed test: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[>] Scanning: console-backend.truelayer-sandbox.com
+2025-07-01 14:02:39,122 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[>] Scanning: console.truelayer-sandbox.com
+2025-07-01 14:02:40,272 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed test: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: hpp.truelayer-sandbox.com
+2025-07-01 14:02:41,416 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed test: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: webhooks.truelayer-sandbox.com
+2025-07-01 14:02:42,987 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed test: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[>] Scanning: *.truelayer.cloud
+2025-07-01 14:02:43,995 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed test: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.com
+2025-07-01 14:02:45,005 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed test: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.truelayer.io
+2025-07-01 14:02:46,012 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed test: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.sqills.com
+2025-07-01 14:02:47,019 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed test: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.sqills.team
+2025-07-01 14:02:48,023 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed test: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.cz.allegrosandbox.pl
+2025-07-01 14:02:49,026 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.pl.allegrosandbox.pl
+2025-07-01 14:02:50,030 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: *.allegro.sk.allegrosandbox.pl
+2025-07-01 14:02:51,034 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed test: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: alchemy.veriff.com
+2025-07-01 14:03:07,048 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed test: Proxy test timed out.
+[>] Scanning: api.flamingo-eu.veriff.com
+2025-07-01 14:03:08,199 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed test: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: api.us.veriff.me
+2025-07-01 14:03:25,049 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed test: Proxy test timed out.
+[>] Scanning: api.veriff.me
+2025-07-01 14:03:42,042 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed test: Proxy test timed out.
+[>] Scanning: com.veriff.demo
+2025-07-01 14:03:43,191 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed test: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: louvre.veriff.me
+2025-07-01 14:04:00,041 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed test: Proxy test timed out.
+[>] Scanning: magic.veriff.me
+2025-07-01 14:04:18,168 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed test: Proxy test timed out.
+[>] Scanning: station.veriff.com
+2025-07-01 14:04:35,175 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed test: Proxy test timed out.
+[>] Scanning: stationapi.veriff.com
+2025-07-01 14:04:52,172 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed test: Proxy test timed out.
+[>] Scanning: *.veriff.com
+2025-07-01 14:04:53,183 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed test: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: developers.veriff.me
+2025-07-01 14:05:10,168 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed test: Proxy test timed out.
+[>] Scanning: www.veriff.com
+2025-07-01 14:05:27,178 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed test: Proxy test timed out.
+[>] Scanning: https://*.saytechnologies.com
+2025-07-01 14:05:28,187 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed test: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[>] Scanning: https://*.say.rocks
+2025-07-01 14:05:29,194 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed test: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+
+[✓] Scanning complete.
+(venv) PS D:\osint\ultidork\code> python main.py
+[+] Loading targets from ..\utidork's_target_list_first.json
+[+] Loaded 82 targets. Starting scans...
+
+[>] Attempt 1 for www.bybit.com
+2025-07-01 14:08:38,161 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for www.bybit.com
+2025-07-01 14:08:55,165 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for www.bybit.com
+2025-07-01 14:09:13,174 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed: Proxy test timed out.
+[X] www.bybit.com failed after 3 attempts
+[>] Attempt 1 for koho.ca
+2025-07-01 14:09:30,167 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for koho.ca
+2025-07-01 14:09:47,163 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for koho.ca
+2025-07-01 14:10:05,163 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed: Proxy test timed out.
+[X] koho.ca failed after 3 attempts
+[>] Attempt 1 for *.monzo.com*.monzo.com*
+2025-07-01 14:10:06,174 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.monzo.com*.monzo.com*
+2025-07-01 14:10:07,179 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.monzo.com*.monzo.com*
+2025-07-01 14:10:09,183 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[X] *.monzo.com*.monzo.com* failed after 3 attempts
+[>] Attempt 1 for co.uk.getmondo
+2025-07-01 14:10:10,337 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for co.uk.getmondo
+2025-07-01 14:10:11,344 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for co.uk.getmondo
+2025-07-01 14:10:13,351 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[X] co.uk.getmondo failed after 3 attempts
+[>] Attempt 1 for api.truelayer-sandbox.com
+2025-07-01 14:10:15,073 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for api.truelayer-sandbox.com
+2025-07-01 14:10:16,656 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for api.truelayer-sandbox.com
+2025-07-01 14:10:19,241 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[X] api.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for auth.truelayer-sandbox.com
+2025-07-01 14:10:20,973 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for auth.truelayer-sandbox.com
+2025-07-01 14:10:22,557 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for auth.truelayer-sandbox.com
+2025-07-01 14:10:25,144 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[X] auth.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for login-api.truelayer-sandbox.com
+2025-07-01 14:10:26,879 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for login-api.truelayer-sandbox.com
+2025-07-01 14:10:28,466 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for login-api.truelayer-sandbox.com
+2025-07-01 14:10:31,045 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[X] login-api.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for login.truelayer-sandbox.com
+2025-07-01 14:10:32,768 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for login.truelayer-sandbox.com
+2025-07-01 14:10:34,358 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for login.truelayer-sandbox.com
+2025-07-01 14:10:36,943 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[X] login.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for onboarding-api.truelayer.com
+2025-07-01 14:10:38,679 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for onboarding-api.truelayer.com
+2025-07-01 14:10:40,262 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for onboarding-api.truelayer.com
+2025-07-01 14:10:42,840 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[X] onboarding-api.truelayer.com failed after 3 attempts
+[>] Attempt 1 for pay-api.truelayer-sandbox.com
+2025-07-01 14:10:44,561 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for pay-api.truelayer-sandbox.com
+2025-07-01 14:10:46,140 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for pay-api.truelayer-sandbox.com
+2025-07-01 14:10:48,720 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[X] pay-api.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for pay.truelayer-sandbox.com
+2025-07-01 14:10:50,442 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for pay.truelayer-sandbox.com
+2025-07-01 14:10:52,029 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for pay.truelayer-sandbox.com
+2025-07-01 14:10:54,778 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[X] pay.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for paydirect.truelayer-sandbox.com
+2025-07-01 14:10:56,569 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for paydirect.truelayer-sandbox.com
+2025-07-01 14:10:58,143 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for paydirect.truelayer-sandbox.com
+2025-07-01 14:11:00,722 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[X] paydirect.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for payment.truelayer-sandbox.com
+2025-07-01 14:11:02,465 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for payment.truelayer-sandbox.com
+2025-07-01 14:11:04,040 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for payment.truelayer-sandbox.com
+2025-07-01 14:11:06,623 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[X] payment.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for payouts.truelayer-sandbox.com
+2025-07-01 14:11:07,775 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for payouts.truelayer-sandbox.com
+2025-07-01 14:11:08,780 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for payouts.truelayer-sandbox.com
+2025-07-01 14:11:10,787 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[X] payouts.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for users-api.truelayer.com
+2025-07-01 14:11:12,607 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for users-api.truelayer.com
+2025-07-01 14:11:14,194 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for users-api.truelayer.com
+2025-07-01 14:11:16,772 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[X] users-api.truelayer.com failed after 3 attempts
+[>] Attempt 1 for console-backend.truelayer-sandbox.com
+2025-07-01 14:11:18,492 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for console-backend.truelayer-sandbox.com
+2025-07-01 14:11:20,072 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for console-backend.truelayer-sandbox.com
+2025-07-01 14:11:22,649 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[X] console-backend.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for console.truelayer-sandbox.com
+2025-07-01 14:11:23,794 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for console.truelayer-sandbox.com
+2025-07-01 14:11:24,799 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for console.truelayer-sandbox.com
+2025-07-01 14:11:26,810 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[X] console.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for hpp.truelayer-sandbox.com
+2025-07-01 14:11:27,958 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for hpp.truelayer-sandbox.com
+2025-07-01 14:11:28,963 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for hpp.truelayer-sandbox.com
+2025-07-01 14:11:30,969 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[X] hpp.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for webhooks.truelayer-sandbox.com
+2025-07-01 14:11:32,704 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for webhooks.truelayer-sandbox.com
+2025-07-01 14:11:34,288 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for webhooks.truelayer-sandbox.com
+2025-07-01 14:11:36,865 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[X] webhooks.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for *.truelayer.cloud
+2025-07-01 14:11:37,876 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.truelayer.cloud
+2025-07-01 14:11:38,882 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.truelayer.cloud
+2025-07-01 14:11:40,887 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[X] *.truelayer.cloud failed after 3 attempts
+[>] Attempt 1 for *.truelayer.com
+2025-07-01 14:11:41,897 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.truelayer.com
+2025-07-01 14:11:42,901 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.truelayer.com
+2025-07-01 14:11:44,905 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[X] *.truelayer.com failed after 3 attempts
+[>] Attempt 1 for *.truelayer.io
+2025-07-01 14:11:45,914 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.truelayer.io
+2025-07-01 14:11:46,917 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.truelayer.io
+2025-07-01 14:11:48,924 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[X] *.truelayer.io failed after 3 attempts
+[>] Attempt 1 for *.sqills.com
+2025-07-01 14:11:49,933 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.sqills.com
+2025-07-01 14:11:50,938 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.sqills.com
+2025-07-01 14:11:52,943 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[X] *.sqills.com failed after 3 attempts
+[>] Attempt 1 for *.sqills.team
+2025-07-01 14:11:53,954 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.sqills.team
+2025-07-01 14:11:54,960 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.sqills.team
+2025-07-01 14:11:56,965 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[X] *.sqills.team failed after 3 attempts
+[>] Attempt 1 for *.allegro.cz.allegrosandbox.pl
+2025-07-01 14:11:57,977 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.allegro.cz.allegrosandbox.pl
+2025-07-01 14:11:58,983 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.allegro.cz.allegrosandbox.pl
+2025-07-01 14:12:00,988 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[X] *.allegro.cz.allegrosandbox.pl failed after 3 attempts
+[>] Attempt 1 for *.allegro.pl.allegrosandbox.pl
+2025-07-01 14:12:01,997 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.allegro.pl.allegrosandbox.pl
+2025-07-01 14:12:03,001 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.allegro.pl.allegrosandbox.pl
+2025-07-01 14:12:05,005 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[X] *.allegro.pl.allegrosandbox.pl failed after 3 attempts
+[>] Attempt 1 for *.allegro.sk.allegrosandbox.pl
+2025-07-01 14:12:06,014 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.allegro.sk.allegrosandbox.pl
+2025-07-01 14:12:07,019 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.allegro.sk.allegrosandbox.pl
+2025-07-01 14:12:09,024 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[X] *.allegro.sk.allegrosandbox.pl failed after 3 attempts
+[>] Attempt 1 for alchemy.veriff.com
+2025-07-01 14:12:25,170 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for alchemy.veriff.com
+2025-07-01 14:12:42,171 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for alchemy.veriff.com
+2025-07-01 14:13:00,163 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed: Proxy test timed out.
+[X] alchemy.veriff.com failed after 3 attempts
+[>] Attempt 1 for api.flamingo-eu.veriff.com
+2025-07-01 14:13:01,307 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for api.flamingo-eu.veriff.com
+2025-07-01 14:13:02,316 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for api.flamingo-eu.veriff.com
+2025-07-01 14:13:04,318 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[X] api.flamingo-eu.veriff.com failed after 3 attempts
+[>] Attempt 1 for api.us.veriff.me
+2025-07-01 14:13:21,160 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for api.us.veriff.me
+2025-07-01 14:13:38,174 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for api.us.veriff.me
+2025-07-01 14:13:56,161 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed: Proxy test timed out.
+[X] api.us.veriff.me failed after 3 attempts
+[>] Attempt 1 for api.veriff.me
+2025-07-01 14:14:13,172 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for api.veriff.me
+2025-07-01 14:14:30,161 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for api.veriff.me
+2025-07-01 14:14:48,168 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed: Proxy test timed out.
+[X] api.veriff.me failed after 3 attempts
+[>] Attempt 1 for com.veriff.demo
+2025-07-01 14:14:49,310 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for com.veriff.demo
+2025-07-01 14:14:50,317 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for com.veriff.demo
+2025-07-01 14:14:52,323 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[X] com.veriff.demo failed after 3 attempts
+[>] Attempt 1 for louvre.veriff.me
+2025-07-01 14:15:09,165 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for louvre.veriff.me
+2025-07-01 14:15:26,162 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for louvre.veriff.me
+2025-07-01 14:15:44,175 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed: Proxy test timed out.
+[X] louvre.veriff.me failed after 3 attempts
+[>] Attempt 1 for magic.veriff.me
+2025-07-01 14:16:01,169 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for magic.veriff.me
+2025-07-01 14:16:18,171 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for magic.veriff.me
+2025-07-01 14:16:36,163 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed: Proxy test timed out.
+[X] magic.veriff.me failed after 3 attempts
+[>] Attempt 1 for station.veriff.com
+2025-07-01 14:16:53,170 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for station.veriff.com
+2025-07-01 14:17:10,171 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for station.veriff.com
+2025-07-01 14:17:28,171 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed: Proxy test timed out.
+[X] station.veriff.com failed after 3 attempts
+[>] Attempt 1 for stationapi.veriff.com
+2025-07-01 14:17:45,171 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for stationapi.veriff.com
+2025-07-01 14:18:02,171 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for stationapi.veriff.com
+2025-07-01 14:18:20,170 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed: Proxy test timed out.
+[X] stationapi.veriff.com failed after 3 attempts
+[>] Attempt 1 for *.veriff.com
+2025-07-01 14:18:21,181 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.veriff.com
+2025-07-01 14:18:22,183 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.veriff.com
+2025-07-01 14:18:24,185 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[X] *.veriff.com failed after 3 attempts
+[>] Attempt 1 for developers.veriff.me
+2025-07-01 14:18:41,163 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for developers.veriff.me
+2025-07-01 14:18:58,176 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for developers.veriff.me
+2025-07-01 14:19:16,163 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed: Proxy test timed out.
+[X] developers.veriff.me failed after 3 attempts
+[>] Attempt 1 for www.veriff.com
+2025-07-01 14:19:33,160 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for www.veriff.com
+2025-07-01 14:19:50,172 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for www.veriff.com
+2025-07-01 14:20:08,174 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed: Proxy test timed out.
+[X] www.veriff.com failed after 3 attempts
+[>] Attempt 1 for *.saytechnologies.com
+2025-07-01 14:20:09,177 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.saytechnologies.com
+2025-07-01 14:20:10,180 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.saytechnologies.com
+2025-07-01 14:20:12,184 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[X] *.saytechnologies.com failed after 3 attempts
+[>] Attempt 1 for *.say.rocks
+2025-07-01 14:20:13,193 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.say.rocks
+2025-07-01 14:20:14,195 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.say.rocks
+2025-07-01 14:20:16,198 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[X] *.say.rocks failed after 3 attempts
+[>] Attempt 1 for www.bybit.com
+2025-07-01 14:20:33,171 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for www.bybit.com
+2025-07-01 14:20:50,173 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for www.bybit.com
+2025-07-01 14:21:08,171 - WARNING - Proxy test timed out for http://www.bybit.com:8080
+[-] www.bybit.com failed: Proxy test timed out.
+[X] www.bybit.com failed after 3 attempts
+[>] Attempt 1 for koho.ca
+2025-07-01 14:21:25,163 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for koho.ca
+2025-07-01 14:21:42,166 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for koho.ca
+2025-07-01 14:22:00,167 - WARNING - Proxy test timed out for http://koho.ca:8080
+[-] koho.ca failed: Proxy test timed out.
+[X] koho.ca failed after 3 attempts
+[>] Attempt 1 for *.monzo.com*.monzo.com*
+2025-07-01 14:22:01,174 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.monzo.com*.monzo.com*
+2025-07-01 14:22:02,179 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.monzo.com*.monzo.com*
+2025-07-01 14:22:04,185 - WARNING - Proxy test failed for http://*.monzo.com*.monzo.com*:8080 (ClientError): Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[-] *.monzo.com*.monzo.com* failed: Connection error: Cannot connect to host *.monzo.com*.monzo.com*:8080 ssl:default [getaddrinfo failed]
+[X] *.monzo.com*.monzo.com* failed after 3 attempts
+[>] Attempt 1 for co.uk.getmondo
+2025-07-01 14:22:05,336 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for co.uk.getmondo
+2025-07-01 14:22:06,343 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for co.uk.getmondo
+2025-07-01 14:22:08,349 - WARNING - Proxy test failed for http://co.uk.getmondo:8080 (ClientError): Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[-] co.uk.getmondo failed: Connection error: Cannot connect to host co.uk.getmondo:8080 ssl:default [getaddrinfo failed]
+[X] co.uk.getmondo failed after 3 attempts
+[>] Attempt 1 for api.truelayer-sandbox.com
+2025-07-01 14:22:10,075 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for api.truelayer-sandbox.com
+2025-07-01 14:22:11,661 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for api.truelayer-sandbox.com
+2025-07-01 14:22:14,245 - WARNING - Proxy test failed for http://api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[-] api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://api.truelayer-sandbox.com:8080'
+[X] api.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for auth.truelayer-sandbox.com
+2025-07-01 14:22:15,981 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for auth.truelayer-sandbox.com
+2025-07-01 14:22:17,553 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for auth.truelayer-sandbox.com
+2025-07-01 14:22:20,127 - WARNING - Proxy test failed for http://auth.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[-] auth.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://auth.truelayer-sandbox.com:8080'
+[X] auth.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for login-api.truelayer-sandbox.com
+2025-07-01 14:22:21,855 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for login-api.truelayer-sandbox.com
+2025-07-01 14:22:23,427 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for login-api.truelayer-sandbox.com
+2025-07-01 14:22:26,015 - WARNING - Proxy test failed for http://login-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[-] login-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login-api.truelayer-sandbox.com:8080'
+[X] login-api.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for login.truelayer-sandbox.com
+2025-07-01 14:22:27,752 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for login.truelayer-sandbox.com
+2025-07-01 14:22:29,339 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for login.truelayer-sandbox.com
+2025-07-01 14:22:31,925 - WARNING - Proxy test failed for http://login.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[-] login.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://login.truelayer-sandbox.com:8080'
+[X] login.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for onboarding-api.truelayer.com
+2025-07-01 14:22:33,646 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for onboarding-api.truelayer.com
+2025-07-01 14:22:35,382 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for onboarding-api.truelayer.com
+2025-07-01 14:22:38,618 - WARNING - Proxy test failed for http://onboarding-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[-] onboarding-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://onboarding-api.truelayer.com:8080'
+[X] onboarding-api.truelayer.com failed after 3 attempts
+[>] Attempt 1 for pay-api.truelayer-sandbox.com
+2025-07-01 14:22:40,397 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for pay-api.truelayer-sandbox.com
+2025-07-01 14:22:42,312 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for pay-api.truelayer-sandbox.com
+2025-07-01 14:22:44,889 - WARNING - Proxy test failed for http://pay-api.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[-] pay-api.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay-api.truelayer-sandbox.com:8080'
+[X] pay-api.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for pay.truelayer-sandbox.com
+2025-07-01 14:22:46,772 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for pay.truelayer-sandbox.com
+2025-07-01 14:22:48,353 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for pay.truelayer-sandbox.com
+2025-07-01 14:22:50,934 - WARNING - Proxy test failed for http://pay.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[-] pay.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://pay.truelayer-sandbox.com:8080'
+[X] pay.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for paydirect.truelayer-sandbox.com
+2025-07-01 14:22:52,658 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for paydirect.truelayer-sandbox.com
+2025-07-01 14:22:54,240 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for paydirect.truelayer-sandbox.com
+2025-07-01 14:22:56,808 - WARNING - Proxy test failed for http://paydirect.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[-] paydirect.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://paydirect.truelayer-sandbox.com:8080'
+[X] paydirect.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for payment.truelayer-sandbox.com
+2025-07-01 14:22:58,566 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for payment.truelayer-sandbox.com
+2025-07-01 14:23:00,144 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for payment.truelayer-sandbox.com
+2025-07-01 14:23:02,743 - WARNING - Proxy test failed for http://payment.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[-] payment.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://payment.truelayer-sandbox.com:8080'
+[X] payment.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for payouts.truelayer-sandbox.com
+2025-07-01 14:23:03,901 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for payouts.truelayer-sandbox.com
+2025-07-01 14:23:04,907 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for payouts.truelayer-sandbox.com
+2025-07-01 14:23:06,911 - WARNING - Proxy test failed for http://payouts.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] payouts.truelayer-sandbox.com failed: Connection error: Cannot connect to host payouts.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[X] payouts.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for users-api.truelayer.com
+2025-07-01 14:23:08,773 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for users-api.truelayer.com
+2025-07-01 14:23:10,351 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for users-api.truelayer.com
+2025-07-01 14:23:12,931 - WARNING - Proxy test failed for http://users-api.truelayer.com:8080 (ClientError): 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[-] users-api.truelayer.com failed: Connection error: 400, message='Bad Request', url='http://users-api.truelayer.com:8080'
+[X] users-api.truelayer.com failed after 3 attempts
+[>] Attempt 1 for console-backend.truelayer-sandbox.com
+2025-07-01 14:23:14,670 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for console-backend.truelayer-sandbox.com
+2025-07-01 14:23:16,244 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for console-backend.truelayer-sandbox.com
+2025-07-01 14:23:18,851 - WARNING - Proxy test failed for http://console-backend.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[-] console-backend.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://console-backend.truelayer-sandbox.com:8080'
+[X] console-backend.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for console.truelayer-sandbox.com
+2025-07-01 14:23:20,012 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for console.truelayer-sandbox.com
+2025-07-01 14:23:21,018 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for console.truelayer-sandbox.com
+2025-07-01 14:23:23,025 - WARNING - Proxy test failed for http://console.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] console.truelayer-sandbox.com failed: Connection error: Cannot connect to host console.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[X] console.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for hpp.truelayer-sandbox.com
+2025-07-01 14:23:24,175 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for hpp.truelayer-sandbox.com
+2025-07-01 14:23:25,177 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for hpp.truelayer-sandbox.com
+2025-07-01 14:23:27,180 - WARNING - Proxy test failed for http://hpp.truelayer-sandbox.com:8080 (ClientError): Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[-] hpp.truelayer-sandbox.com failed: Connection error: Cannot connect to host hpp.truelayer-sandbox.com:8080 ssl:default [getaddrinfo failed]
+[X] hpp.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for webhooks.truelayer-sandbox.com
+2025-07-01 14:23:28,960 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for webhooks.truelayer-sandbox.com
+2025-07-01 14:23:30,545 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for webhooks.truelayer-sandbox.com
+2025-07-01 14:23:33,116 - WARNING - Proxy test failed for http://webhooks.truelayer-sandbox.com:8080 (ClientError): 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[-] webhooks.truelayer-sandbox.com failed: Connection error: 400, message='Bad Request', url='http://webhooks.truelayer-sandbox.com:8080'
+[X] webhooks.truelayer-sandbox.com failed after 3 attempts
+[>] Attempt 1 for *.truelayer.cloud
+2025-07-01 14:23:34,125 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.truelayer.cloud
+2025-07-01 14:23:35,131 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.truelayer.cloud
+2025-07-01 14:23:37,136 - WARNING - Proxy test failed for http://*.truelayer.cloud:8080 (ClientError): Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.cloud failed: Connection error: Cannot connect to host *.truelayer.cloud:8080 ssl:default [getaddrinfo failed]
+[X] *.truelayer.cloud failed after 3 attempts
+[>] Attempt 1 for *.truelayer.com
+2025-07-01 14:23:38,143 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.truelayer.com
+2025-07-01 14:23:39,147 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.truelayer.com
+2025-07-01 14:23:41,149 - WARNING - Proxy test failed for http://*.truelayer.com:8080 (ClientError): Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.com failed: Connection error: Cannot connect to host *.truelayer.com:8080 ssl:default [getaddrinfo failed]
+[X] *.truelayer.com failed after 3 attempts
+[>] Attempt 1 for *.truelayer.io
+2025-07-01 14:23:42,154 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.truelayer.io
+2025-07-01 14:23:43,157 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.truelayer.io
+2025-07-01 14:23:45,161 - WARNING - Proxy test failed for http://*.truelayer.io:8080 (ClientError): Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[-] *.truelayer.io failed: Connection error: Cannot connect to host *.truelayer.io:8080 ssl:default [getaddrinfo failed]
+[X] *.truelayer.io failed after 3 attempts
+[>] Attempt 1 for *.sqills.com
+2025-07-01 14:23:46,170 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.sqills.com
+2025-07-01 14:23:47,176 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.sqills.com
+2025-07-01 14:23:49,180 - WARNING - Proxy test failed for http://*.sqills.com:8080 (ClientError): Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.com failed: Connection error: Cannot connect to host *.sqills.com:8080 ssl:default [getaddrinfo failed]
+[X] *.sqills.com failed after 3 attempts
+[>] Attempt 1 for *.sqills.team
+2025-07-01 14:23:50,188 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.sqills.team
+2025-07-01 14:23:51,193 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.sqills.team
+2025-07-01 14:23:53,195 - WARNING - Proxy test failed for http://*.sqills.team:8080 (ClientError): Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[-] *.sqills.team failed: Connection error: Cannot connect to host *.sqills.team:8080 ssl:default [getaddrinfo failed]
+[X] *.sqills.team failed after 3 attempts
+[>] Attempt 1 for *.allegro.cz.allegrosandbox.pl
+2025-07-01 14:23:54,200 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.allegro.cz.allegrosandbox.pl
+2025-07-01 14:23:55,203 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.allegro.cz.allegrosandbox.pl
+2025-07-01 14:23:57,208 - WARNING - Proxy test failed for http://*.allegro.cz.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.cz.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.cz.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[X] *.allegro.cz.allegrosandbox.pl failed after 3 attempts
+[>] Attempt 1 for *.allegro.pl.allegrosandbox.pl
+2025-07-01 14:23:58,216 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.allegro.pl.allegrosandbox.pl
+2025-07-01 14:23:59,221 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.allegro.pl.allegrosandbox.pl
+2025-07-01 14:24:01,225 - WARNING - Proxy test failed for http://*.allegro.pl.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.pl.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.pl.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[X] *.allegro.pl.allegrosandbox.pl failed after 3 attempts
+[>] Attempt 1 for *.allegro.sk.allegrosandbox.pl
+2025-07-01 14:24:02,230 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.allegro.sk.allegrosandbox.pl
+2025-07-01 14:24:03,233 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.allegro.sk.allegrosandbox.pl
+2025-07-01 14:24:05,237 - WARNING - Proxy test failed for http://*.allegro.sk.allegrosandbox.pl:8080 (ClientError): Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[-] *.allegro.sk.allegrosandbox.pl failed: Connection error: Cannot connect to host *.allegro.sk.allegrosandbox.pl:8080 ssl:default [getaddrinfo failed]
+[X] *.allegro.sk.allegrosandbox.pl failed after 3 attempts
+[>] Attempt 1 for alchemy.veriff.com
+2025-07-01 14:24:22,169 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for alchemy.veriff.com
+2025-07-01 14:24:39,163 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for alchemy.veriff.com
+2025-07-01 14:24:57,174 - WARNING - Proxy test timed out for http://alchemy.veriff.com:8080
+[-] alchemy.veriff.com failed: Proxy test timed out.
+[X] alchemy.veriff.com failed after 3 attempts
+[>] Attempt 1 for api.flamingo-eu.veriff.com
+2025-07-01 14:24:58,364 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for api.flamingo-eu.veriff.com
+2025-07-01 14:24:59,366 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for api.flamingo-eu.veriff.com
+2025-07-01 14:25:01,372 - WARNING - Proxy test failed for http://api.flamingo-eu.veriff.com:8080 (ClientError): Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] api.flamingo-eu.veriff.com failed: Connection error: Cannot connect to host api.flamingo-eu.veriff.com:8080 ssl:default [getaddrinfo failed]
+[X] api.flamingo-eu.veriff.com failed after 3 attempts
+[>] Attempt 1 for api.us.veriff.me
+2025-07-01 14:25:18,162 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for api.us.veriff.me
+2025-07-01 14:25:35,160 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for api.us.veriff.me
+2025-07-01 14:25:53,171 - WARNING - Proxy test timed out for http://api.us.veriff.me:8080
+[-] api.us.veriff.me failed: Proxy test timed out.
+[X] api.us.veriff.me failed after 3 attempts
+[>] Attempt 1 for api.veriff.me
+2025-07-01 14:26:10,175 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for api.veriff.me
+2025-07-01 14:26:27,166 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for api.veriff.me
+2025-07-01 14:26:45,168 - WARNING - Proxy test timed out for http://api.veriff.me:8080
+[-] api.veriff.me failed: Proxy test timed out.
+[X] api.veriff.me failed after 3 attempts
+[>] Attempt 1 for com.veriff.demo
+2025-07-01 14:26:46,324 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for com.veriff.demo
+2025-07-01 14:26:47,332 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for com.veriff.demo
+2025-07-01 14:26:49,336 - WARNING - Proxy test failed for http://com.veriff.demo:8080 (ClientError): Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[-] com.veriff.demo failed: Connection error: Cannot connect to host com.veriff.demo:8080 ssl:default [getaddrinfo failed]
+[X] com.veriff.demo failed after 3 attempts
+[>] Attempt 1 for louvre.veriff.me
+2025-07-01 14:27:06,169 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for louvre.veriff.me
+2025-07-01 14:27:23,174 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for louvre.veriff.me
+2025-07-01 14:27:41,165 - WARNING - Proxy test timed out for http://louvre.veriff.me:8080
+[-] louvre.veriff.me failed: Proxy test timed out.
+[X] louvre.veriff.me failed after 3 attempts
+[>] Attempt 1 for magic.veriff.me
+2025-07-01 14:27:58,170 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for magic.veriff.me
+2025-07-01 14:28:15,164 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for magic.veriff.me
+2025-07-01 14:28:33,163 - WARNING - Proxy test timed out for http://magic.veriff.me:8080
+[-] magic.veriff.me failed: Proxy test timed out.
+[X] magic.veriff.me failed after 3 attempts
+[>] Attempt 1 for station.veriff.com
+2025-07-01 14:28:50,170 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for station.veriff.com
+2025-07-01 14:29:07,171 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for station.veriff.com
+2025-07-01 14:29:25,173 - WARNING - Proxy test timed out for http://station.veriff.com:8080
+[-] station.veriff.com failed: Proxy test timed out.
+[X] station.veriff.com failed after 3 attempts
+[>] Attempt 1 for stationapi.veriff.com
+2025-07-01 14:29:42,173 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for stationapi.veriff.com
+2025-07-01 14:29:59,172 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for stationapi.veriff.com
+2025-07-01 14:30:17,172 - WARNING - Proxy test timed out for http://stationapi.veriff.com:8080
+[-] stationapi.veriff.com failed: Proxy test timed out.
+[X] stationapi.veriff.com failed after 3 attempts
+[>] Attempt 1 for *.veriff.com
+2025-07-01 14:30:18,180 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.veriff.com
+2025-07-01 14:30:19,182 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.veriff.com
+2025-07-01 14:30:21,187 - WARNING - Proxy test failed for http://*.veriff.com:8080 (ClientError): Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[-] *.veriff.com failed: Connection error: Cannot connect to host *.veriff.com:8080 ssl:default [getaddrinfo failed]
+[X] *.veriff.com failed after 3 attempts
+[>] Attempt 1 for developers.veriff.me
+2025-07-01 14:30:38,173 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for developers.veriff.me
+2025-07-01 14:30:55,162 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for developers.veriff.me
+2025-07-01 14:31:13,175 - WARNING - Proxy test timed out for http://developers.veriff.me:8080
+[-] developers.veriff.me failed: Proxy test timed out.
+[X] developers.veriff.me failed after 3 attempts
+[>] Attempt 1 for www.veriff.com
+2025-07-01 14:31:30,168 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed: Proxy test timed out.
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for www.veriff.com
+2025-07-01 14:31:47,170 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed: Proxy test timed out.
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for www.veriff.com
+2025-07-01 14:32:05,171 - WARNING - Proxy test timed out for http://www.veriff.com:8080
+[-] www.veriff.com failed: Proxy test timed out.
+[X] www.veriff.com failed after 3 attempts
+[>] Attempt 1 for *.saytechnologies.com
+2025-07-01 14:32:06,178 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.saytechnologies.com
+2025-07-01 14:32:07,182 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.saytechnologies.com
+2025-07-01 14:32:09,187 - WARNING - Proxy test failed for http://*.saytechnologies.com:8080 (ClientError): Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[-] *.saytechnologies.com failed: Connection error: Cannot connect to host *.saytechnologies.com:8080 ssl:default [getaddrinfo failed]
+[X] *.saytechnologies.com failed after 3 attempts
+[>] Attempt 1 for *.say.rocks
+2025-07-01 14:32:10,191 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 1 seconds before retry...
+[>] Attempt 2 for *.say.rocks
+2025-07-01 14:32:11,195 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[*] Backing off 2 seconds before retry...
+[>] Attempt 3 for *.say.rocks
+2025-07-01 14:32:13,200 - WARNING - Proxy test failed for http://*.say.rocks:8080 (ClientError): Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[-] *.say.rocks failed: Connection error: Cannot connect to host *.say.rocks:8080 ssl:default [getaddrinfo failed]
+[X] *.say.rocks failed after 3 attempts
+
+[!] 82 targets failed completely:
+ - https://www.bybit.com
+ - https://koho.ca
+ - *.monzo.com*.monzo.com*
+ - co.uk.getmondo
+ - api.truelayer-sandbox.com
+ - auth.truelayer-sandbox.com
+ - login-api.truelayer-sandbox.com
+ - login.truelayer-sandbox.com
+ - onboarding-api.truelayer.com
+ - pay-api.truelayer-sandbox.com
+ - pay.truelayer-sandbox.com
+ - paydirect.truelayer-sandbox.com
+ - payment.truelayer-sandbox.com
+ - payouts.truelayer-sandbox.com
+ - users-api.truelayer.com
+ - console-backend.truelayer-sandbox.com
+ - console.truelayer-sandbox.com
+ - hpp.truelayer-sandbox.com
+ - webhooks.truelayer-sandbox.com
+ - *.truelayer.cloud
+ - *.truelayer.com
+ - *.truelayer.io
+ - *.sqills.com
+ - *.sqills.team
+ - *.allegro.cz.allegrosandbox.pl
+ - *.allegro.pl.allegrosandbox.pl
+ - *.allegro.sk.allegrosandbox.pl
+ - alchemy.veriff.com
+ - api.flamingo-eu.veriff.com
+ - api.us.veriff.me
+ - api.veriff.me
+ - com.veriff.demo
+ - louvre.veriff.me
+ - magic.veriff.me
+ - station.veriff.com
+ - stationapi.veriff.com
+ - *.veriff.com
+ - developers.veriff.me
+ - www.veriff.com
+ - https://*.saytechnologies.com
+ - https://*.say.rocks
+ - https://www.bybit.com
+ - https://koho.ca
+ - *.monzo.com*.monzo.com*
+ - co.uk.getmondo
+ - api.truelayer-sandbox.com
+ - auth.truelayer-sandbox.com
+ - login-api.truelayer-sandbox.com
+ - login.truelayer-sandbox.com
+ - onboarding-api.truelayer.com
+ - pay-api.truelayer-sandbox.com
+ - pay.truelayer-sandbox.com
+ - paydirect.truelayer-sandbox.com
+ - payment.truelayer-sandbox.com
+ - payouts.truelayer-sandbox.com
+ - users-api.truelayer.com
+ - console-backend.truelayer-sandbox.com
+ - console.truelayer-sandbox.com
+ - hpp.truelayer-sandbox.com
+ - webhooks.truelayer-sandbox.com
+ - *.truelayer.cloud
+ - *.truelayer.com
+ - *.truelayer.io
+ - *.sqills.com
+ - *.sqills.team
+ - *.allegro.cz.allegrosandbox.pl
+ - *.allegro.pl.allegrosandbox.pl
+ - *.allegro.sk.allegrosandbox.pl
+ - alchemy.veriff.com
+ - api.flamingo-eu.veriff.com
+ - api.us.veriff.me
+ - api.veriff.me
+ - com.veriff.demo
+ - louvre.veriff.me
+ - magic.veriff.me
+ - station.veriff.com
+ - stationapi.veriff.com
+ - *.veriff.com
+ - developers.veriff.me
+ - www.veriff.com
+ - https://*.saytechnologies.com
+ - https://*.say.rocks
+
+[✓] Scanning complete.
+(venv) PS D:\osint\ultidork\code>

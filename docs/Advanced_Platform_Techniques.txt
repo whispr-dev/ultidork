@@ -1,0 +1,894 @@
+# Advanced Platform Techniques - Specialized CMS & Framework Targeting
+
+## Table of Contents
+1. [WordPress CMS Advanced Exploitation](#wordpress-cms-advanced-exploitation)
+2. [Microsoft SharePoint Vulnerabilities](#microsoft-sharepoint-vulnerabilities)
+3. [Adobe Experience Manager (AEM) Security](#adobe-experience-manager-aem-security)
+4. [Symfony Framework Vulnerabilities](#symfony-framework-vulnerabilities)
+5. [API Discovery and Testing](#api-discovery-and-testing)
+6. [File Upload Vulnerabilities](#file-upload-vulnerabilities)
+7. [Database and Backup File Discovery](#database-and-backup-file-discovery)
+
+---
+
+## WordPress CMS Advanced Exploitation
+
+### WordPress Directory Structure Analysis
+
+```
+/ (Root Directory)
+├── wp-admin/                  # Core admin files and backend functionality
+│   ├── css/                   # Admin-specific CSS files
+│   ├── js/                    # Admin-specific JavaScript files
+│   ├── images/                # Admin-specific images
+│   ├── includes/              # Admin-related includes
+│   └── index.php              # Main entry for admin dashboard
+├── wp-content/                # Customizable content
+│   ├── plugins/               # Installed plugins
+│   │   ├── plugin-name/       # Plugin folder
+│   │   │   ├── assets/        # Plugin-specific assets
+│   │   │   ├── includes/      # Plugin-specific includes
+│   │   │   └── plugin.php     # Main plugin file
+│   ├── themes/                # Installed themes
+│   │   ├── theme-name/        # Theme folder
+│   │   │   ├── assets/        # Theme-specific assets
+│   │   │   ├── templates/     # Theme template files
+│   │   │   ├── functions.php  # Theme functionality file
+│   │   │   └── style.css      # Main stylesheet
+│   ├── uploads/               # Uploaded media
+│   │   ├── 2024/              # Year-based folders
+│   │   │   ├── 01/            # Month-based folders
+│   │   │   └── ...
+│   └── index.php              # Prevents directory listing
+├── wp-includes/               # Core WordPress library files
+├── .htaccess                  # Server configuration file
+├── wp-config.php              # Configuration file (database settings)
+├── index.php                  # Main entry point
+├── license.txt                # WordPress license information
+└── readme.html                # Readme file with basic WordPress info
+```
+
+### WordPress Configuration Backup Discovery
+
+**Common Backup Naming Patterns:**
+```
+/wp-config.php-bak
+/wp-config.php.bak
+/wp-config.php.new
+/wp-config.php.old
+/wp-config.php_Old
+/wp-config.php_bak
+/wp-config.php_new
+/wp-config.php_old
+/wp-config.bak
+/wp-config.php_2024
+/wp-config.php.bak_2024
+/wp-config.php.2024_backup
+```
+
+**Directory Listing Vulnerabilities:**
+```
+intitle:"index of /wp-content"
+intitle:"index of /wp-content/uploads"
+intitle:"index of /wp-content/bak"
+intitle:"index of /wp-content/backup"
+intitle:"index of /wp-content/2024"
+```
+
+### WordPress Document Discovery
+
+**Excel Spreadsheets in WordPress:**
+```
+inurl:wp-content/uploads/ ext:xlsx site:domain.com
+inurl:wp-content/uploads/ ext:xls site:domain.com
+inurl:wp-content/uploads/ ext:xls "@gmail.com" site:domain.com
+inurl:wp-content/uploads/ ext:xlsx "@gmail.com" site:domain.com
+inurl:wp-content/uploads/ ext:xls "date of birth" site:domain.com
+inurl:wp-content/uploads/ ext:xlsx "date of birth" site:domain.com
+inurl:wp-content/uploads/ ext:xls "INTERNAL USE ONLY" site:domain.com
+inurl:wp-content/uploads/ ext:xlsx "INTERNAL USE ONLY" site:domain.com
+```
+
+**PDF Documents in WordPress:**
+```
+inurl:wp-content/uploads/ ext:pdf site:domain.com
+inurl:wp-content/uploads/ ext:pdf "@gmail.com" site:domain.com
+inurl:wp-content/uploads/ ext:pdf "date of birth" site:domain.com
+inurl:wp-content/uploads/ ext:pdf "INTERNAL USE ONLY" site:domain.com
+inurl:wp-content/uploads/ ext:pdf "CONFIDENTIAL" site:domain.com
+```
+
+**Enhanced Document Discovery with Customization:**
+
+*Email Domain Variations:*
+- Corporate domains: `"@targetcompany.com"`
+- Popular providers: `"proton.me"`, `"hotmail.com"`, `"yahoo.com"`, `"outlook.com"`
+- Regional providers relevant to target geography
+
+*Confidentiality Markers:*
+- `"CONFIDENTIAL"`
+- `"HIGHLY CONFIDENTIAL"`
+- `"PRIVATE USE ONLY"`
+- `"NOT FOR PUBLIC RELEASE"`
+- `"RESTRICTED"`
+- `"SENSITIVE INFORMATION"`
+- `"DO NOT DISTRIBUTE"`
+
+*Personal Data Indicators:*
+- `"SSN"` or `"Social Security"`
+- `"passport"`
+- `"employee ID"`
+- `"salary"`
+- `"performance review"`
+- `"home address"`
+
+### WordPress Backup File Fuzzing
+
+**Systematic Backup Discovery:**
+```
+inurl:/wp-content/backup-FUZZ
+inurl:/wp-content/backup_FUZZ
+```
+
+**Wordlist Integration Strategy:**
+1. Start with SecLists collection
+2. Expand to Assetnotes repository
+3. Create contextual wordlists using cewl
+4. Incorporate organization-specific terminology from GitHub repositories
+
+**Time-Based Fuzzing Patterns:**
+- Date formats (YYYYMMDD, YYYY-MM-DD)
+- Version numbers and development stages (v1, beta, test)
+- Developer/administrator usernames
+
+### WordPress Private Content Discovery
+
+```
+inurl:/wp-content/ inurl:private
+inurl:/wp-content/ inurl:internal
+inurl:/wp-content/ inurl:confidential
+inurl:/wp-content/ inurl:restricted
+inurl:/wp-content/ inurl:staff-only
+inurl:/wp-content/ inurl:hr
+inurl:/wp-content/ inurl:finance
+inurl:/wp-content/ inurl:executives
+```
+
+**WordPress Vulnerability Scanning:**
+```bash
+nuclei -l endpoints.txt -tags wordpress -severity critical,high,medium,low
+```
+
+---
+
+## Microsoft SharePoint Vulnerabilities
+
+### SharePoint Document Library Discovery
+
+**Basic SharePoint Discovery:**
+```
+site:*.com inurl:allitems.aspx -stackexchange -site:microsoft.com -site:stackoverflow.com -site:wordpress.com
+site:*.gov inurl:allitems.aspx
+inurl:/pages/forms/allitems.aspx
+```
+
+**SiteAssets Folder Exposure:**
+```
+inurl:SiteAssets/Forms/AllItems.aspx
+```
+
+**Calendar and List Discovery:**
+```
+inurl:/Lists/Calendar/AllItems.aspx
+```
+
+**Site Contents and Overview:**
+```
+inurl:/viewlsts.aspx site:*.edu
+inurl:/viewlsts.aspx site:*.edu.*
+inurl:/_layouts/15/viewlsts.aspx
+```
+
+### SharePoint Authentication Analysis
+
+**Proper Authentication Flow:**
+```
+https://login.microsoftonline.com/xxxxxxx-xxxxxxx-xxxxxxxx-xxxxxx/oauth2/authorize?client%5Fid=xxxxxxx&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=xxxxxxxxxx&scope=openid&nonce=xxxxxxxxx&redirect%5Furi=xxxxxxxxxx%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=xxxx&claims=xxxxxxxxx
+```
+
+**Bypass Scenarios to Test:**
+- Credentials stored in documents
+- Internal communications exposure
+- Contact information and PII disclosure
+- Email addresses in "Modified By" columns
+- Content modification capabilities
+- Write access for document uploads
+- Edit capabilities on existing documents
+- Delete functions enabling data destruction
+
+### SharePoint Historical Analysis
+
+**Historical URL Mining:**
+```bash
+waymore -i domain.com -mode U -oU waymore_domain.txt
+cat waymore_domain.txt | grep -i "AllItems.aspx" 
+cat waymore_domain.txt | grep -i "AllItems.aspx" | sort -u | uro 
+```
+
+**SharePoint-Specific Patterns:**
+```bash
+cat waymore_domain.txt | grep -i "_layouts"
+cat waymore_domain.txt | grep -i "sharepoint"
+cat waymore_domain.txt | grep -i "forms/allitems"
+```
+
+---
+
+## Adobe Experience Manager (AEM) Security
+
+### AEM Instance Identification
+
+**Core AEM Discovery:**
+```
+inurl:/libs/granite/core
+inurl:/content/dam
+```
+
+**AEM Document Exposure:**
+```
+inurl:/content/dam ext:xls
+inurl:/content/dam ext:xlsx
+```
+
+### AEM Security Testing Tools
+
+**Nuclei Templates:**
+```bash
+nuclei -u <subdomain or url> -tags aem
+```
+
+**Specialized Wordlists:**
+- clarkvoss/AEM-List GitHub repository for fuzzing
+- AEM-specific endpoint enumeration
+
+**Advanced AEM Testing:**
+- aem-hacker tool by 0ang3el
+- Trickest guidance for large-scale AEM discovery
+- Mikhail Egorov's comprehensive AEM methodology
+
+### AEM Vulnerability Examples
+
+**JSON Information Disclosure:**
+```
+# Append .1.json to URLs for potential information exposure
+/path/to/page.1.json
+```
+
+**AEM Configuration Exposure:**
+- Authentication bypass in .json endpoints
+- Configuration file exposure
+- User enumeration through AEM interfaces
+
+---
+
+## Symfony Framework Vulnerabilities
+
+### Symfony Debug Mode Detection
+
+**Debug Mode Indicators:**
+```
+inurl:app_dev.php
+inurl:app_dev
+inurl:_profiler
+inurl:profiler
+```
+
+**Debug Mode Exploitation:**
+1. **Initial Access:** Append `_profiler` to any page with `app_dev.php`
+2. **Profiler Interface:** Access redirects to `app_dev.php/_profiler/empty/search/results?limit=10`
+3. **Information Extraction:** Environment variables, server configuration, internal paths
+
+**Configuration File Access:**
+```
+/app_dev.php/_profiler/open?file=app/config/parameters.yml
+```
+
+**Exposed Information Includes:**
+- `database_host`, `database_port`, `database_name`
+- `database_user`, `database_password`
+- `mailer_transport`, `mailer_host`, `mailer_user`, `mailer_password`
+- Application secrets and API keys
+
+### Symfony Discovery Strategies
+
+**Targeted Google Dorking:**
+```
+site:domain.com inurl:app_dev.php
+site:domain.com inurl:app_dev
+site:domain.com inurl:_profiler
+site:domain.com inurl:profiler
+site:*.domain.com inurl:app_dev.php
+site:*.domain.com inurl:_profiler
+```
+
+**Historical URL Analysis:**
+```bash
+waymore -i domain.com -mode U -oU waymore_domain.com
+cat waymore_domain.com.txt | grep "app_dev.php"
+cat waymore_domain.com.txt | grep "_profiler"
+```
+
+**Burp Suite Global Search:**
+After crawling, search for:
+- `app_dev.php`
+- `_profiler`
+- Symfony-specific debugging paths
+
+**Systematic Fuzzing:**
+```bash
+# Basic paths
+app_dev
+app_dev.php
+_profiler
+_profiler/empty/search/results?limit=10
+
+# Using specialized Symfony wordlists
+# hisxo/Wordlist GitHub repository
+# tennc/fuzzdb Symfony scanlist (500+ paths)
+```
+
+---
+
+## API Discovery and Testing
+
+### REST API Endpoint Discovery
+
+**GET Method Targeting:**
+```
+intitle:"GET api/" site:gov
+intitle:"GET api/" site:gov.*
+intitle:"GET api/" site:edu
+intitle:"GET api/" site:TLD
+intitle:"GET api/" site:ccTLD
+```
+
+**CRUD Operation Discovery:**
+```
+"CREATE /" "API" inurl:doc site:gov
+"POST /" "API" inurl:doc site:gov  
+"PUT /" "API" inurl:doc site:gov
+"PATCH" site:gov "application/json"
+"DELETE" site:gov "application/json"
+```
+
+### API Documentation Platform Targeting
+
+**Stoplight Documentation:**
+```
+"API" inurl:doc "Powered by Stoplight" -site:stoplight.io -site:github.io -site:github.com
+```
+
+**ReDoc Documentation:**
+```
+inurl:/redoc "application/json" -site:github.com -site:redoc.com
+inurl:/v1/redoc
+inurl:/v2/redoc
+```
+
+**GitHub-Linked Documentation:**
+```
+inurl:api "Edit on Github" -site:github.com
+"available on Github" "API" inurl:doc -site:github.com -site:github.io
+```
+
+**Additional Documentation Platforms:**
+- Slate: `"API" inurl:doc "Powered by Slate"`
+- Aglio: `"Generated by aglio" "API" inurl:doc`
+- Redocly: `"API docs by Redocly"`
+- Swagger: `"SwaggerHub" site:gov -ext:pdf`
+- Sphinx: `"Created using Sphinx" "API" inurl:doc site:gov.*`
+
+### GraphQL API Discovery
+
+```
+"API" inurl:doc "GraphQL" -site:github.com -site:gitlab.com
+inurl:doc "mutation" "GraphQL" -site:github.com -site:gitlab.com
+```
+
+**GraphQL-Specific Vulnerabilities:**
+- Schema exploration interfaces
+- Example queries revealing sensitive data
+- Type definitions and relationships
+- Overly permissive query capabilities
+
+### API Authentication Discovery
+
+**Authentication-Related Keywords:**
+```
+"curl -u"
+"default cred"
+"default credentials"
+"default username"
+"default password"
+```
+
+**Testing and Debugging Hooks:**
+```
+"test"
+"sample"
+"debug"
+"webhook"
+```
+
+**High-Value Data Identifiers:**
+```
+"social security number"
+"bank"
+"passport"
+"payment"
+"contact"
+"date of birth"
+```
+
+---
+
+## File Upload Vulnerabilities
+
+### File Upload Endpoint Discovery
+
+**HTML DOM Element Targeting:**
+```
+site:domain.com "Choose File"
+site:domain.com "No file chosen"
+site:domain.com "Upload"
+site:domain.com "Upload here"
+site:domain.com "Upload a file"
+site:domain.com "Please upload your"
+```
+
+**URL Keyword Targeting:**
+```
+site:domain.com inurl:upload
+site:domain.com inurl:uploadfile
+```
+
+**Server-Side Processing Scripts:**
+```
+ext:php
+ext:asp
+ext:aspx
+ext:do
+ext:action
+ext:jsp
+ext:jspx
+ext:ashx
+ext:axd
+ext:xd
+```
+
+### File Upload Testing Methodology
+
+**Comprehensive Testing Approach:**
+1. **Basic Functionality Testing**
+   - Upload legitimate files
+   - Observe file storage locations and naming conventions
+   - Check for client-side validation
+
+2. **File Type Restriction Bypass**
+   - Test prohibited file types (.php, .aspx, .jsp)
+   - Change content-type headers during upload
+   - Test double extensions (image.jpg.php)
+   - Use uncommon extensions (.phtml, .php5, .shtml)
+
+3. **Content Validation Bypass**
+- Add malicious code to legitimate file formats
+- Test for metadata execution in image files
+- Try polyglot files valid in multiple formats
+
+4. **Size Restriction Testing**
+- Test uploading extremely large files
+- Check for denial of service vulnerabilities
+-Test uploading zero-byte files
+
+
+5. **Server-Side Processing Vulnerabilities**
+- Test for path traversal in upload destinations
+- Check for race conditions during processing
+- Look for insecure temporary file handling
+
+
+
+ZFile Implementation Vulnerabilities
+ZFile Discovery:
+"Powered by ZFile"
+Security Implications:
+
+Weak authentication with visible passwords
+Sensitive data exposure in file repositories
+Weak or default password implementations
+Path construction vulnerabilities
+
+Common ZFile Misconfigurations:
+
+Public internet exposure of internal file sharing
+Simple, guessable passwords
+Default security settings
+No access logging or monitoring
+Sensitive data in publicly accessible directories
+
+
+Database and Backup File Discovery
+Database File Targeting
+Hidden Database Discovery:
+bashmkdir db_wordlists
+cd db_wordlists
+wget https://raw.githubusercontent.com/dkcyberz/Harpy/refs/heads/main/Hidden/database.txt
+dirsearch -u https://sub2.sub1.domain.com -x 403,404,500,400,502,503,429 -e xml,json,sql,db,log
+Database File Extensions:
+ext:sql
+ext:db
+ext:sqlite
+ext:mdb
+ext:dump
+ext:dbf
+Database Backup Patterns:
+inurl:"index of /" "database"
+inurl:"index of /" ".db"
+inurl:"index of /" ".sql"
+inurl:"index of /" ".db_backup"
+inurl:"index of /" "mysql.dump"
+inurl:"index of /" "backup.sql"
+Advanced Database Discovery
+Technology-Specific Database Files:
+bash# MySQL
+site:domain.com ext:sql "CREATE TABLE"
+site:domain.com ext:sql "INSERT INTO"
+site:domain.com ext:dump "mysqldump"
+
+# PostgreSQL
+site:domain.com ext:sql "COPY"
+site:domain.com ext:backup "pg_dump"
+
+# SQLite
+site:domain.com ext:sqlite
+site:domain.com ext:db "SQLite"
+
+# Microsoft SQL Server
+site:domain.com ext:bak "SQL Server"
+site:domain.com ext:mdf
+MSO (Microsoft Office Structured Storage) File Analysis
+MSO File Discovery:
+site:*.edu ext:mso
+MSO Security Analysis Protocol:
+
+Only download in isolated VM environments
+Use online MSO viewers rather than direct execution
+Focus on metadata examination
+Look for:
+
+Internal file paths
+Network share references
+User account information
+Server names and domain information
+Internal URLs and resource locations
+
+
+
+
+Advanced Error Page Exploitation
+Spring Boot WhiteLabel Error Pages
+Discovery Pattern:
+body="Whitelabel Error Page" && body="This application has no configured error view"
+Post-Discovery Testing:
+bash# Test Spring Boot Actuator endpoints
+/actuator
+/actuator/heapdump      # Critical - memory dump with credentials
+/actuator/env           # Environment variables and secrets
+/actuator/beans         # Application structure
+/actuator/mappings      # All available endpoints
+/actuator/health
+/actuator/info
+/actuator/configprops
+/actuator/threaddump
+/actuator/scheduledtasks
+Spring Boot Wordlist:
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/Programming-Language-Specific/Java-Spring-Boot.txt
+PHP Information Disclosure
+phpinfo() Page Discovery:
+body="phpinfo" && body="Server API" && body="display_startup_errors"
+Information Extracted:
+
+PHP version and configuration
+Environment variables
+Loaded modules
+Server software and OS details
+Path disclosures
+
+Dangerous JavaScript Function Exploitation
+eval() Function Discovery:
+body="eval("
+Security Testing for eval():
+
+Process user-controlled input through select elements
+Test for XSS and code injection
+Identify client-side validation bypasses
+
+
+Enterprise Application Vulnerabilities
+Jenkins Instance Discovery
+Jenkins Dashboard Discovery:
+intitle:"Dashboard [Jenkins]" Credentials
+Jenkins Security Risks:
+
+Direct code access through repository integration
+Deployment control and malicious code injection
+Credential theft from stored tokens and keys
+Lateral movement through credential access
+Server compromise via executor access
+
+Jenkins Credential Interface Analysis:
+
+System credentials including GitHub tokens
+Private keys and database passwords
+Global credential stores
+Build automation secrets
+
+Confluence Dashboard Vulnerabilities
+Confluence Discovery:
+intitle:dashboard-confluence
+inurl:http://confluence. login.action
+inurl:https://wiki. .com/confluence/
+allinurl: /confluence/login.action?
+"/spacedirectory/view.action"
+"/pages/viewpage.action?"
+"/pages/releaseview.action?"
+"aboutconfluencepage.action"
+Confluence Security Implications:
+
+Sensitive document access (architectural diagrams, credentials)
+User information disclosure
+CVE-2019-3396 vulnerability exposure
+Application integration details revealing API endpoints
+
+phpMyAdmin Exposure
+phpMyAdmin Discovery:
+inurl:main ext:php "Welcome to phpMyAdmin" "running on"
+"Welcome to phpMyAdmin" "running on" inurl:main.php
+inurl:main.php phpMyAdmin
+inurl:main.php "Welcome to phpMyAdmin"
+inurl:sql.php "phpmyadmin"
+inurl:sql "phpmyadmin"
+phpMyAdmin Security Risks:
+
+Complete database control (CRUD operations)
+Sensitive data exposure
+Server-side SQL execution capabilities
+Version exploitation opportunities
+
+
+Cloud Storage and CDN Vulnerabilities
+AWS S3 Bucket Discovery
+S3 Bucket Patterns:
+site:*.s3.amazonaws.com
+site:*.*.s3.amazonaws.com
+site:*.*.*.s3.amazonaws.com
+inurl:"s3.amazonaws.com"
+site:*.s3.amazonaws.com intitle:Bucket loading
+CSV File Discovery in S3:
+page.url:s3. AND page.url:amazonaws.com AND page.url:csv
+S3 Security Testing:
+
+Directory listing enabled
+Public read/write permissions
+Predictable bucket naming
+Sensitive file exposure
+
+Cloudflare R2 Bucket Discovery
+R2 Bucket Patterns:
+site:.r2.dev "companyname"
+page.url:r2.dev
+R2 Security Issues:
+
+Public read access misconfiguration
+Weak access controls
+Insecure object URLs
+Misconfigured CORS settings
+Exposed metadata
+
+
+Administrative Interface Discovery
+Odoo Database Management
+Odoo Discovery:
+"Manage databases" inurl:/database/selector
+Odoo Security Risks:
+
+Database selection exposure
+"Manage Databases" functionality
+Database creation capabilities
+Master password access
+
+Electric Vehicle Charging Interfaces
+Charging Station Discovery:
+"Master" "Slave" "Charging station interface"
+Security Implications:
+
+Operational intelligence exposure
+Backend connection credential access
+Physical security implications
+Infrastructure mapping opportunities
+
+ISPConfig Hosting Panels
+ISPConfig Discovery:
+"Powered by ISPConfig" "hosting control panel"
+ISPConfig Security Risks:
+
+Brute force opportunities
+Version identification for exploit targeting
+Comprehensive hosting management access
+Database and email system access
+
+Docker WebUI Dashboards
+Docker WebUI Discovery:
+"Docker App Running" "Click on any card to access its webUI"
+Docker Security Implications:
+
+Direct access to containerized applications
+Container escape possibilities
+Network infrastructure mapping
+Lateral movement opportunities
+
+Game Server Admin Consoles
+7 Days to Die Discovery:
+intitle:"7D2D dashboard"
+Game Server Security Risks:
+
+Administrative command access
+User permission management
+Server resource manipulation
+Community disruption capabilities
+
+
+Monitoring and Analytics Platform Exploitation
+Grafana Dashboard Discovery
+Grafana Targeting:
+intitle:"Grafana" inurl:"/dashboard/db"
+"Manage folder dashboards and permissions"
+Grafana Security Implications:
+
+Infrastructure visibility and dependencies
+Alert thresholds exposing limitations
+Internal naming conventions
+Authentication bypass opportunities
+
+Prometheus Server Discovery
+Prometheus Targeting:
+"Prometheus Time Series Collection and Processing Server"
+inurl:/actuator/prometheus "jvm_memory_max_bytes"
+Prometheus Security Risks:
+
+Detailed system performance metrics
+Memory configuration exposure
+Application runtime values
+Infrastructure component relationships
+
+Elasticsearch and Kibana
+Kibana Discovery:
+inurl:kibana inurl:app
+inurl:kibana inurl:app inurl:5601
+Elasticsearch Security Implications:
+
+Sensitive log data access
+Authentication credential exposure
+User tracking information
+Network architecture insights
+
+
+Real-Time Cache Bypass and Dynamic Content
+Cache Bypass Discovery
+Real-Time Update Pages:
+site:domain.com inurl:nocache inurl:TRUE
+Security Implications:
+
+Bypass security controls at caching layer
+Direct backend data source connections
+Less stringent input validation
+Different error handling patterns
+
+
+Advanced Reconnaissance Strategies
+Subdomain Discovery via Third-Party Intelligence
+Netify Network Intelligence:
+site:netify.ai inurl:hostnames "domain.tld"
+Sur.ly Service Analysis:
+site:sur.ly "domain.tld"
+site:sur.ly "domain.tld" -www
+site:sur.ly "domain.tld" -"www.domain.tld"
+Wikidata Structured Knowledge:
+site:wikidata.org "domain.tld" -"www.domain.tld"
+site:wikidata.org "domain.tld" -www
+Additional Intelligence Sources
+Bluesky Social Network:
+site:bsky.app "domain.tld" "subdomain"
+site:bsky.app "domain.tld" -"www.domain.tld" "https"
+RootsChat Community Forums:
+site:rootschat.com "domain.tld"
+Google Groups Archive:
+site:groups.google.com "domain.tld"
+IPInfo Network Intelligence:
+site:ipinfo.io "domain.tld"
+site:ipinfo.io "sublevel1.domain.tld"
+site:ipinfo.io inurl:ips "domain.tld"
+site:ipinfo.io "domain.tld" "AS number details"
+
+Advanced File Manager and Upload Exploits
+Roxy File Manager
+Roxy Discovery:
+intitle:"Roxy file manager"
+Roxy Security Risks:
+
+View all uploaded files
+Upload malicious files (web shells)
+Delete or modify existing files
+Download sensitive information
+Complete server control potential
+
+File Manager Endpoints
+General File Manager Discovery:
+page.url:filemanager.php
+page.url:manage AND page.url:php
+page.url:file AND page.url:php
+page.url:document AND page.url:php
+page.url:upload AND page.url:php
+Alternative Extensions:
+aspx, asp, jsp, jspx, do, action, cgi
+
+Professional Methodology Integration
+Systematic Assessment Workflow
+
+Technology Identification
+
+Fingerprint web technologies
+Identify CMS and framework versions
+Map server infrastructure
+
+
+Endpoint Discovery
+
+Apply platform-specific dorks
+Historical URL analysis
+Configuration file hunting
+
+
+Vulnerability Validation
+
+Test discovered endpoints
+Verify access controls
+Document security implications
+
+
+Impact Assessment
+
+Classify vulnerability severity
+Document potential business impact
+Prepare remediation recommendations
+
+
+
+Defense Recommendations
+For Organizations:
+
+Implement proper access controls on administrative interfaces
+Regular security scanning using these same techniques
+Remove default installations and configurations
+Monitor for unusual access patterns
+Apply security headers and WAF protection
+
+For Security Researchers:
+
+Always test within authorized scope
+Document findings professionally
+Provide clear remediation guidance
+Follow responsible disclosure practices
+Maintain ethical standards throughout testing
+
+This comprehensive guide provides advanced techniques for discovering and exploiting vulnerabilities across multiple platforms and frameworks, enabling security professionals to conduct thorough assessments while maintaining ethical standards.

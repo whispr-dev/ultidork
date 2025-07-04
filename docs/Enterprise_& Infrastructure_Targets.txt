@@ -1,0 +1,592 @@
+# Enterprise & Infrastructure Targeting - Advanced Reconnaissance
+
+## Table of Contents
+1. [GeoServer and Geographic Information Systems](#geoserver-and-geographic-information-systems)
+2. [Enterprise Monitoring and Analytics Platforms](#enterprise-monitoring-and-analytics-platforms)
+3. [Government and Educational Domain Targeting](#government-and-educational-domain-targeting)
+4. [Financial and PII Discovery Techniques](#financial-and-pii-discovery-techniques)
+5. [CVE and Exploit Integration](#cve-and-exploit-integration)
+6. [Infrastructure Mapping and Network Discovery](#infrastructure-mapping-and-network-discovery)
+7. [Development and Testing Environment Discovery](#development-and-testing-environment-discovery)
+
+---
+
+## GeoServer and Geographic Information Systems
+
+### GeoServer Discovery and Exploitation
+
+**GeoServer Instance Discovery:**
+```
+inurl:"/geoserver/ows?service=wfs" site:*.gov
+```
+
+**GeoServer Service Interfaces:**
+- **WFS (Web Feature Service):** Allows retrieval and manipulation of geographic feature data
+- **WMS (Web Map Service):** Provides map images from geographic data
+- **WCS (Web Coverage Service):** Enables access to coverage data
+- **WPS (Web Processing Service):** Offers geospatial processing capabilities
+
+**Post-Discovery Vulnerability Assessment:**
+```bash
+nuclei -l urls_endpoints.txt -tags geoserver -severity critical,high,medium
+```
+
+**GeoServer Security Implications:**
+- Sensitive geographic data exposure
+- Government infrastructure information
+- Server information disclosure
+- Access control bypass opportunities
+- Geospatial data extraction capabilities
+
+---
+
+## Enterprise Monitoring and Analytics Platforms
+
+### Prometheus Time Series Monitoring
+
+**Global Prometheus Discovery:**
+Based on research revealing approximately 296,000 exposed Prometheus instances globally:
+
+**Google Dork Techniques:**
+```
+"Prometheus Time Series Collection and Processing Server" -site:prometheus.io
+site:prometheus.*.*.gov
+site:prometheus.*.gov
+site:prometheus.*.*.gov.*
+site:prometheus.*.gov.*
+```
+
+**Shodan Intelligence:**
+```
+http.title:"Prometheus Time Series Collection and Processing Server"
+```
+
+**Geographic Distribution Analysis:**
+- United States: 9,212 instances
+- Germany: 5,396 instances  
+- China: 4,571 instances
+- France: 2,086 instances
+- Brazil: 2,066 instances
+
+**Prometheus Security Implications:**
+- Detailed internal metrics exposure
+- System architecture visibility
+- Operational pattern disclosure
+- Kubernetes API server connections
+- Memory usage and performance data
+
+### Grafana Visualization Platform
+
+**Grafana Discovery:**
+```
+intitle:"Grafana" inurl:"/dashboard/db"
+inurl:dashboards inurl:alerting -site:github.com "Manage folder dashboards and permissions"
+```
+
+**Grafana Security Risks:**
+- Infrastructure visualization data
+- Alert thresholds and limitations
+- Internal hostnames and architecture
+- Performance baseline information
+- Authentication bypass potential
+
+### Kibana Data Visualization
+
+**Kibana Discovery:**
+```
+inurl:kibana inurl:app
+inurl:kibana inurl:app inurl:5601
+```
+
+**Kibana Security Implications:**
+- Sensitive log data exposure
+- User tracking information
+- Network architecture insights
+- Authentication credential exposure
+- Debug information in error messages
+
+### Spring Boot Actuator Endpoints
+
+**Actuator Discovery:**
+```
+inurl:/actuator/prometheus "jvm_memory_max_bytes"
+inurl:/actuator/prometheus "jvm_gc_pause_seconds"
+```
+
+**Critical Actuator Endpoints:**
+```
+/actuator/conditions
+/actuator/configprops
+/actuator/loggers
+/actuator/threaddump
+/actuator/scheduledtasks
+/actuator/mappings
+/actuator/env          # Environment variables with secrets
+/actuator/heapdump     # Complete memory dump (Critical severity)
+```
+
+**Actuator Security Impact:**
+- Environment variable exposure (API keys, database credentials)
+- Memory dump analysis for credential extraction
+- Application configuration disclosure
+- Internal service endpoint mapping
+
+---
+
+## Government and Educational Domain Targeting
+
+### Government Domain Analysis
+
+**Systematic Government Targeting:**
+```
+site:*.gov "Choose File"
+site:*.gov "Upload"
+site:*.gov "Uncaught Error: Call to undefined function"
+site:*.gov "error in your SQL"
+site:*.gov "WordPress database error:"
+site:*.gov "PHP Fatal"
+site:*.gov "not found in C:\"
+```
+
+**Government-Specific Value Targets:**
+- Citizen data and services
+- Critical infrastructure controls
+- Internal government communications
+- Security clearance information
+- Policy and regulation documents
+
+### Educational Institution Targeting
+
+**Educational Domain Patterns:**
+```
+site:*.edu inurl:ganglia inurl:graph_all_periods.php
+site:*.edu.* inurl:ganglia inurl:graph_all_periods.php
+site:ganglia.*.edu
+site:ganglia.*.*.edu
+site:ganglia.*.edu.*
+site:ganglia.*.*.edu.*
+```
+
+**Educational Security Characteristics:**
+- Research data and intellectual property
+- Student and faculty personal information
+- Grant and funding information
+- Academic collaboration data
+- Less rigorous security than commercial entities
+
+### Ganglia Monitoring System Vulnerabilities
+
+**Ganglia Discovery:**
+```
+inurl:ganglia inurl:graph_all_periods.php
+site:*.edu inurl:ganglia inurl:graph_all_periods.php
+site:ganglia.*.* intitle:Grid
+site:ganglia.*.* intitle:cluster
+site:ganglia.*.* inurl:Node
+```
+
+**Ganglia XSS Vulnerability:**
+- **Vulnerable Parameter:** `h` GET parameter in `graph_all_periods.php`
+- **Payload:** `')"><img src=0 onerror=prompt();>`
+- **Root Cause:** Inadequate sanitization in `sanitize()` function
+- **Impact:** Reflected XSS in educational monitoring systems
+
+---
+
+## Financial and PII Discovery Techniques
+
+### Banking and Financial Document Discovery
+
+**Comprehensive Financial Targeting:**
+```
+site:domain.com "Credit Card" ext:pdf
+site:domain.com "Credit Card No" ext:pdf
+site:domain.com "Credit Card Number" ext:pdf
+site:domain.com "Bank Name" ext:pdf
+site:domain.com "Bank Account" ext:pdf
+site:domain.com "Bank Account Holder" ext:pdf
+site:domain.com "Beneficiary" ext:pdf
+site:domain.com "Beneficiary Name" ext:pdf
+site:domain.com "IFSC" ext:pdf
+site:domain.com "Cardholder" ext:pdf
+site:domain.com "Card Holder" ext:pdf
+site:domain.com "Swift" ext:pdf
+site:domain.com "Swift Code" ext:pdf
+```
+
+**File Extensions for Financial Data:**
+```
+pdf, csv, xls, xlsx, doc, docx, odt, odf
+```
+
+**URL Patterns for Financial Documents:**
+```
+inurl:attachment
+inurl:attach  
+inurl:attachments
+```
+
+**Advanced Financial Document Targeting:**
+```
+site:domain.com ext:pdf "COMPANY SENSITIVE"
+site:domain.com inurl:view inurl:private ext:pdf
+site:domain.com inurl:upload ext:pdf
+site:domain.com inurl:uploads ext:pdf
+site:domain.com inurl:internal ext:pdf
+site:domain.com inurl:storage ext:pdf
+site:domain.com inurl:download ext:pdf
+site:domain.com inurl:webview ext:pdf
+site:domain.com inurl:content ext:pdf
+site:domain.com inurl:_data ext:pdf
+```
+
+**Negative Filtering for Precision:**
+```
+-docs -doc -documentation -form -draft -application -sample -template -public
+```
+
+### Personal Identifiable Information (PII) Discovery
+
+**SSN Discovery:**
+```bash
+grep -Eo '\b[0-9]{3}-[0-9]{2}-[0-9]{4}\b' wayback_domain.com.txt
+```
+
+**Credit Card Number Discovery:**
+```bash
+grep -Eo '\b[0-9]{13,16}\b' wayback_domain.com.txt
+```
+
+**Session ID and Cookie Discovery:**
+```bash
+grep -Eo '[a-zA-Z0-9]{32,}' wayback_domain.com.txt
+```
+
+---
+
+## CVE and Exploit Integration
+
+### Real-Time CVE Monitoring
+
+**CVEDB API Integration:**
+```bash
+curl https://cvedb.shodan.io/cves | jq | grep "cve_id"
+curl -s https://cvedb.shodan.io/cves | jq '.cves[] | {cve_id,summary,published_time}'
+```
+
+**Recent CVE Examples:**
+- **CVE-2024-31892:** IBM Storage Scale GUI formula neutralization
+- **CVE-2024-31891:** IBM Storage Scale GUI privilege escalation to root
+- **CVE-2024-11721:** WordPress FrontEnd Admin plugin privilege escalation
+- **CVE-2024-11720:** WordPress FrontEnd Admin plugin stored XSS
+
+### GitHub Exploit Discovery
+
+**F5 BIG-IP Vulnerabilities:**
+- **CVE-2022-1388:** RCE exploitation
+- **CVE-2023-46747:** RCE exploit  
+- **CVE-2020-5902:** IoC checker for BIG-IP vulnerability
+
+**Critical RCE Exploits:**
+- **CVE-2023-50164:** Apache Struts RCE
+- **CVE-2023-33831:** FUXA SCADA/HMI Dashboard RCE
+- **CVE-2023-3519:** Citrix ADC RCE
+- **CVE-2023-46604:** Apache ActiveMQ Reverse Shell
+- **CVE-2023-26360:** Adobe ColdFusion RCE
+
+**GitHub Exploit Search Pattern:**
+```
+"product name" "exploit" site:github.com
+```
+
+### University Recognition and Remediation
+
+**Clemson University Case Study:**
+- **CVE Rating:** 9.8 (Critical)
+- **Response:** Official certificate from Information Security Office
+- **Recognition:** "Enhancing our organization's security through responsible disclosure"
+
+**Drexel University Recognition:**
+- **Response:** Formal acknowledgment from Chief Information Security Officer
+- **Hall of Fame:** Recognition on Bug Bounty Program webpage
+- **Remediation:** Confirmed vulnerability addressing
+
+---
+
+## Infrastructure Mapping and Network Discovery
+
+### Port-Specific Discovery
+
+**Non-Standard Port Targeting:**
+```
+inurl:8080/dashboard
+inurl:8081/dashboard
+```
+
+**Common Alternative Ports:**
+- **Port 8080:** Jenkins, development servers
+- **Port 8081:** Secondary admin interfaces
+- **Port 8443:** Alternative HTTPS
+- **Port 8088:** Administrative interfaces
+- **Port 9000:** Portainer, monitoring services
+- **Port 3000:** Grafana, development servers
+
+### Dashboard Port Reference
+
+| Dashboard Type | Default Port |
+|----------------|--------------|
+| Grafana | 3000 |
+| Kibana | 5601 |
+| Jenkins | 8080 |
+| Prometheus | 9090 |
+| Splunk | 8000 |
+| RabbitMQ Management | 15672 |
+| SonarQube | 9000 |
+| Harbor Registry | 80/443 |
+| Elasticsearch | 9200 |
+| Docker Registry UI | 5000 |
+| Hadoop YARN | 8088 |
+| Spark Web UI | 4040 |
+| Vault UI | 8200 |
+| Consul UI | 8500 |
+
+### Network Service Discovery
+
+**Message Broker Discovery:**
+```
+site:rabbitmq.*.*.com
+site:rabbitmq.*.gov.*
+site:rabbitmq.*.edu.*
+```
+
+**Container Management:**
+```
+site:portainer.*.*.uk
+site:portainer.*.au
+site:portainer.*.*.gov.*
+```
+
+**Version Control and CI/CD:**
+```
+site:git.*.domain.com
+site:ci.*.domain.com
+site:jenkins.*.domain.com
+```
+
+---
+
+## Development and Testing Environment Discovery
+
+### Development Environment Patterns
+
+**Development Instance Discovery:**
+```
+site:app-dev.*.*
+site:app-dev.*.io
+site:app-dev.*.com
+site:app-dev.*.org
+site:app-dev.*.net
+site:app-dev.*.ai
+```
+
+**Demo API Environments:**
+```
+site:demo-api.*.*
+site:demo-api.*.io
+site:demo-api.*.com
+site:demo-api.*.org
+site:demo-api.*.net
+site:demo-api.*.ai
+```
+
+**Development Environment Characteristics:**
+- Simplified authentication or bypassed controls
+- Extended documentation revealing internal functioning
+- Debugging information with implementation details
+- Test data patterns used in production
+- Alternative endpoints persisting into production
+
+### Remote Desktop Web Connections
+
+**Remote Desktop Discovery:**
+```
+"Server" "Size" "Send logon information for this connection"
+```
+
+**Security Implications:**
+- Direct administrative access to Windows servers
+- Authentication target for credential attacks
+- Legacy technology often running unsupported systems
+- Network access through successful authentication
+- Limited logging compared to traditional RDP
+
+### Staging and Testing Environment Analysis
+
+**Environment Identification Patterns:**
+- **SIT:** System Integration Testing environments
+- **UAT:** User Acceptance Testing environments  
+- **DEV:** Development environments
+- **STAGING:** Pre-production environments
+- **BETA:** Beta testing environments
+
+**Testing Environment Security Characteristics:**
+- Pre-production code with debugging enabled
+- Looser security controls than production
+- More verbose error messages
+- Test accounts and sample data
+- Incomplete security implementations
+
+---
+
+## Advanced Administrative Interface Discovery
+
+### Installation Wizard Exposure
+
+**iTop Installation Discovery:**
+```
+"iTop Installation Wizard" "Prerequisites validation"
+```
+
+**Installation Wizard Security Risks:**
+- Incomplete installation processes
+- Configuration reset capabilities
+- Database configuration access
+- System information disclosure
+- Potential for complete system reconfiguration
+
+### Storybook Design System Exposure
+
+**Storybook Discovery:**
+```
+site:storybook.*.*.uk
+site:storybook.*.nl
+site:storybook.*.* site:org -site:storybook.js.org
+```
+
+**Storybook Security Implications:**
+- Source code disclosure in component examples
+- API endpoint exposure in testing interfaces
+- Authentication bypass patterns visibility
+- Brand information for phishing campaigns
+- JavaScript error message path disclosure
+
+### ReportViewer Tax Document Interfaces
+
+**ReportViewer Discovery:**
+```
+inurl:ReportViewer.aspx -site:github.com
+inurl:ReportViewer.aspx inurl:& -site:github.com
+inurl:ReportViewer.aspx inurl:? -site:github.com
+```
+
+**ReportViewer Security Risks:**
+- Tax identification number disclosure
+- Financial document leakage
+- Business relationship information
+- Document enumeration via URL manipulation
+- Internal reporting system access
+
+### Advanced Administrative Setup Pages
+
+**Administrator Setup Discovery:**
+```
+"set up the administrator user" inurl:pivot
+```
+
+**Setup Page Security Implications:**
+- SuperAdmin account creation without authentication
+- Full administrative control access
+- Site configuration manipulation
+- Security control bypass during setup phase
+- Persistent access even after vulnerability remediation
+
+---
+
+## Comprehensive Network Infrastructure Analysis
+
+### ASN and Network Block Discovery
+
+**ASN-Based Reconnaissance:**
+```bash
+# Identify organization's ASN
+# Use ASN for comprehensive network mapping
+asn="AS394161"  # Example: Tesla Motors ASN
+```
+
+**Network Infrastructure Correlation:**
+- Shared infrastructure identification
+- Development environment discovery
+- Forgotten or legacy system identification
+- Network topology mapping
+
+### Certificate Transparency Analysis
+
+**Certificate-Based Discovery:**
+```
+cert.subject.cn="domain.com"
+```
+
+**Certificate Intelligence Benefits:**
+- Subdomain discovery through certificate logs
+- Service identification through certificate metadata
+- Deployment timeline analysis
+- Infrastructure relationship mapping
+
+### Favicon Hash Correlation
+
+**Favicon-Based Asset Discovery:**
+```bash
+# Generate favicon hash from known assets
+# Search for identical hashes across internet
+# Identify related infrastructure by visual branding
+```
+
+**Favicon Hash Applications:**
+- Related asset identification
+- Infrastructure clustering
+- Shadow IT discovery
+- Brand portfolio mapping
+
+---
+
+## Enterprise Security Assessment Strategy
+
+### Comprehensive Assessment Workflow
+
+1. **Infrastructure Mapping**
+   - ASN and network block identification
+   - Certificate transparency analysis
+   - Port scanning and service enumeration
+
+2. **Service Discovery**
+   - Administrative interface identification
+   - Monitoring system discovery
+   - Development environment location
+
+3. **Vulnerability Assessment**
+   - CVE correlation with discovered services
+   - Configuration analysis
+   - Access control testing
+
+4. **Impact Analysis**
+   - Data sensitivity assessment
+   - Business process mapping
+   - Regulatory compliance implications
+
+### Defense Recommendations
+
+**For Enterprise Organizations:**
+- Implement network segmentation
+- Regular external attack surface assessment
+- Monitoring and alerting for unusual access
+- Proper authentication on all administrative interfaces
+- Regular security updates and patch management
+
+**For Security Researchers:**
+- Focus on high-impact vulnerabilities
+- Provide comprehensive remediation guidance
+- Document business impact clearly
+- Follow responsible disclosure timelines
+- Maintain professional communication standards
+
+This comprehensive guide enables security professionals to systematically discover and assess enterprise infrastructure vulnerabilities while maintaining ethical standards and providing value through thorough documentation and remediation guidance.

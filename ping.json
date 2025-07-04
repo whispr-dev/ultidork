@@ -1,0 +1,11 @@
+['from config.endpoints import PROXY_ENDPOINTS',
+ 'from core.proxy_manager import ProxyManager',
+ 'def bot_worker(bot_id, proxy, url):',
+ '    print(f"[BOT {bot_id}] Using proxy: {proxy}")',
+ '    proxies = {"http": f"http://{proxy}", "https": f"http://{proxy}"}',
+ '    proxy_manager = ProxyManager(refresh_interval_min=15, max_proxies=100)',
+ '        proxy_manager.fetch_proxies(force_refresh=True)',
+ '    if not wait_for_proxies(proxy_manager, required=args.count, timeout=30):',
+ '    logging.info(f"[RUNNER] Proxy pool size: {proxy_manager.get_pool_size()}")',
+ '        proxy = proxy_manager.get_proxy()',
+ '        print(f"[BOT {i+1}] Got proxy: {proxy}")']

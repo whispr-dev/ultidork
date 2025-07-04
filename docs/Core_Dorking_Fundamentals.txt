@@ -1,0 +1,547 @@
+# Core Dorking Fundamentals - Complete Guide
+
+## Table of Contents
+1. [Introduction to Google Dorking](#introduction-to-google-dorking)
+2. [Basic Operators and Syntax](#basic-operators-and-syntax)
+3. [Error Message Exploitation](#error-message-exploitation)
+4. [File and Directory Discovery](#file-and-directory-discovery)
+5. [Authentication Bypass and Login Discovery](#authentication-bypass-and-login-discovery)
+6. [Rate Limiting Bypass Techniques](#rate-limiting-bypass-techniques)
+7. [OSINT and Intelligence Gathering](#osint-and-intelligence-gathering)
+
+---
+
+## Introduction to Google Dorking
+
+### How Google Search Engine Works
+
+**Crawling:**
+Google's automated bots (spiders) systematically discover and scan websites, finding all associated endpoints including files, images, and external links. Google prioritizes crawling based on content quality, topic relevance, content freshness, and backlinks from reputable domains.
+
+**Indexing:**
+The index is Google's massive database storing information about discovered web pages, including content, structure, quality metrics, update frequency, and SEO characteristics.
+
+Search results continuously update, creating opportunities for security researchers. One researcher might test all indexed URLs for specific vulnerabilities, but months later, another researcher may discover new vulnerabilities in the same domain because:
+1. Web developers have made significant changes
+2. New content has been indexed  
+3. Different endpoints have become visible
+
+This ongoing evolution makes continuous security testing essential.
+
+### What is Dorking?
+
+Dorking leverages Google's advanced search operators to refine searches for specific security testing objectives. It's the art of using specialized search queries to find specific types of information that might not be easily discoverable through standard searches.
+
+---
+
+## Basic Operators and Syntax
+
+### Core Google Dork Operators
+
+**site:** - Restricts results to a specific website or domain
+```
+site:nasa.gov confidential
+site:*.gov "internal use only"
+```
+
+**inurl:** - Finds pages with specific keywords in the URL
+```
+inurl:admin
+inurl:login
+inurl:config
+```
+
+**intitle:** - Locates pages with specific keywords in the title
+```
+intitle:"Index of /"
+intitle:"Dashboard [Jenkins]"
+```
+
+**intext:** - Identifies pages containing specific text in their content
+```
+intext:"internal use only"
+intext:"confidential"
+```
+
+**filetype:** or **ext:** - Filters results by specific file extensions
+```
+filetype:pdf
+ext:sql
+ext:config
+```
+
+**cache:** - Retrieves Google's cached version of a page
+```
+cache:example.com
+```
+
+**Advanced Operators:**
+- **allinurl:** - All specified terms must be in the URL
+- **allintitle:** - All specified terms must be in the title  
+- **before:** and **after:** - Limits results to specific time periods
+- **OR** (or |) - Searches for either term
+- **AND** (or space) - Searches for both terms
+- **-** - Excludes terms from search
+- **""** (quotes) - Searches for exact phrases
+- ***** (wildcard) - Substitutes for any word or characters
+
+### Strategic Search Combinations
+
+**Multi-operator queries:**
+```
+site:domain.com inurl:admin filetype:php
+site:*.gov intitle:"index of" "password"
+inurl:login site:domain.com -inurl:public
+```
+
+**Temporal filtering:**
+```
+after:2023-01-01 before:2023-12-31 site:domain.com "vulnerability"
+```
+
+---
+
+## Error Message Exploitation
+
+### PHP Error Discovery
+
+**Call to Undefined Function Errors:**
+```
+site:*.gov "Uncaught Error: Call to undefined function"
+site:domain.com "Call to undefined function mysql_result"
+```
+
+These errors reveal:
+- Complete server-side file paths
+- Function names being called
+- Line numbers where errors occur
+- Internal directory structures
+- Deprecated MySQL functions indicating outdated code
+
+**SQL Syntax Errors:**
+```
+site:*.gov "error in your SQL"
+site:domain.com "SQL syntax error"
+site:domain.com "mysql_fetch_array"
+```
+
+SQL errors expose:
+- Raw SQL query snippets
+- Database type and version information
+- Table and column names
+- Query parameter values
+
+**WordPress Database Errors:**
+```
+site:*.gov "WordPress database error:"
+site:domain.com "WordPress database error:" "Disk full"
+```
+
+WordPress errors reveal:
+- System paths (/var/tmp/#sql_62e0_1.MAI)
+- Server configuration details
+- SQL syntax used in WordPress operations
+- Database user permissions
+- WordPress table structures
+
+**Fatal PHP Errors:**
+```
+site:*.gov "PHP Fatal" -site:code.*.* -site:gitlab.*.*
+```
+
+Fatal errors expose:
+- Complete file paths on the server
+- PHP class names and internal structure
+- Theme and plugin details
+- Line numbers for debugging
+- PHP version information
+
+### Windows Path Disclosures
+
+```
+site:*.gov "not found in C:\"
+site:*.gov "not found in D:\"
+site:*.gov "not found in E:\"
+```
+
+Windows path errors reveal:
+- Operating system details (C:\xampp\)
+- Web root locations (C:\xampp\htdocs\)
+- Technology stack information
+- Development environment indicators
+
+### Database Query Execution Errors
+
+```
+site:*.gov "Error Executing Database Query"
+site:*.gov "Unclosed quotation mark"
+```
+
+These expose:
+- Database system information ([Macromedia][SQLServer JDBC Driver])
+- SQL query fragments
+- Application context details
+- Query syntax issues indicating injection points
+
+---
+
+## File and Directory Discovery
+
+### Configuration File Targeting
+
+**WordPress Configuration Files:**
+```
+inurl:"index of /" "wp-config.php.txt"
+inurl:"index of /" "wp-config.txt"  
+inurl:"index of /" "wp-config.php.bak"
+inurl:"index of /" "wp-config.php.old"
+inurl:"index of /" "wp-config.php.backup"
+inurl:"index of /" "wp-config.php.zip"
+```
+
+**General Configuration Files:**
+```
+inurl:"index of /" "config.xml"
+inurl:"index of /" "web.config"
+inurl:"index of /" ".env"
+inurl:"index of /" ".ini"
+```
+
+### Database File Discovery
+
+```
+inurl:"index of /" "database"
+inurl:"index of /" ".db"
+inurl:"index of /" ".sql"
+inurl:"index of /" ".db_backup"  
+inurl:"index of /" "mysql.dump"
+inurl:"index of /" "mdb"
+```
+
+### Backup File Patterns
+
+```
+inurl:"index of /" "backup"
+inurl:"index of /" "tar.gz"
+inurl:"index of /" ".bak"
+inurl:"index of /" ".old"
+inurl:"index of /" ".backup"
+```
+
+### Password File Discovery
+
+```
+inurl:"index of /" "pwd"
+inurl:"index of /" "pass.txt"
+inurl:"index of /" "password"
+inurl:"index of /" "password.txt"
+inurl:"index of /" "passwords.txt"
+inurl:"index of /" "passwords.zip"
+```
+
+### Log File Exposure
+
+```
+inurl:"index of /" ".log"
+inurl:"index of /" "access.log"
+inurl:"index of /" "error.log"
+inurl:"index of /" "php_error.log"
+inurl:"index of /" "debug.log"
+```
+
+### Version Control Exposure
+
+```
+inurl:"index of /" ".git"
+inurl:"index of /" "gitconfig"
+inurl:"index of /" ".svn"
+```
+
+---
+
+## Authentication Bypass and Login Discovery
+
+### Hidden Login Page Discovery
+
+**Challenge Example: Finding Dinky Login Page**
+The professional approach involves using unique visual and textual elements from screenshots to construct targeted dorks:
+
+```
+intitle:"Dinky Real-time Computing Platform" intext:"ant.design"
+```
+
+This demonstrates how distinctive interface elements can be leveraged to find specific login pages even without knowing their URLs.
+
+### General Login Discovery
+
+```
+inurl:admin
+inurl:login
+inurl:dashboard
+inurl:signin
+intitle:"Admin Login"
+intitle:"Please Login"
+```
+
+### Default Credentials Targeting
+
+```
+site:domain.com "default username" "default password"
+site:domain.com "admin" "password" login
+site:domain.com "guest" "guest" login
+```
+
+### Authentication Bypass Patterns
+
+```
+site:domain.com inurl:login "forgot password"
+site:domain.com inurl:reset "token"
+site:domain.com inurl:auth "bypass"
+```
+
+---
+
+## Rate Limiting Bypass Techniques
+
+### IP Address Manipulation
+
+**Proxy Chaining:**
+```bash
+proxychains curl -X POST https://target.com/login -d "user=admin&pass=1234"
+```
+
+**Header Manipulation:**
+```
+X-Forwarded-For: 127.0.0.1
+X-Real-IP: 127.0.0.1
+X-Client-IP: 127.0.0.1
+X-Remote-IP: 127.0.0.1
+X-Remote-Addr: 127.0.0.1
+True-Client-IP: 127.0.0.1
+CF-Connecting-IP: 127.0.0.1
+Fastly-Client-IP: 127.0.0.1
+X-Cluster-Client-IP: 127.0.0.1
+```
+
+### HTTP Method Variation
+
+```bash
+curl -X POST https://target.com/login -d "user=admin&pass=1234"
+curl -X GET "https://target.com/login?user=admin&pass=1234"
+curl -X PUT https://target.com/login -d "user=admin&pass=1234"
+```
+
+### Parameter Manipulation
+
+**Parameter Name Variation:**
+```
+username=admin&password=1234
+user=admin&pass=1234
+uname=admin&pwd=1234
+login=admin&passwd=1234
+u=admin&p=1234
+email=admin&key=1234
+id=admin&token=1234
+```
+
+**Parameter Pollution:**
+```
+POST /login HTTP/1.1
+Host: target.com
+Content-Type: application/x-www-form-urlencoded
+
+user=admin&user=admin2&pass=1234
+```
+
+### Encoding Techniques
+
+**Character Encoding Variations:**
+```
+user=admin%20        # space after admin
+user=admin%00        # null byte injection  
+user=%61%64%6d%69%6e # 'admin' in hex
+user=ad%6Din         # partial encoding
+user=%2561%2564%256d%2569%256e  # double-encoded 'admin'
+```
+
+**Content-Type Switching:**
+```
+Content-Type: application/json
+{"user":"admin"}
+
+Content-Type: application/x-www-form-urlencoded  
+user=admin
+```
+
+### Timing-Based Approaches
+
+```python
+import requests
+import time
+
+for i in range(10):
+    r = requests.post("https://target.com/login", 
+                     data={"user":"admin", "pass":"1234"})
+    print(r.status_code)
+    time.sleep(0.9)  # Precisely calibrated delay
+```
+
+---
+
+## OSINT and Intelligence Gathering
+
+### Social Media Intelligence
+
+**WhatsApp Group Discovery:**
+```
+"insider trade site:chat.whatsapp.com"
+"stock trading tips site:chat.whatsapp.com"
+```
+
+**Telegram Channel Discovery:**
+```
+"trading tips site:t.me"
+site:t.me "trading signals"
+```
+
+### Financial Intelligence Gathering
+
+**Bug Bounty Group Discovery:**
+```
+site:linkedin.com "bug hunting" "join whatsapp"
+site:x.com "bug hunting" "join whatsapp"
+"join whatsapp" OR "join my whatsapp"
+```
+
+### Document Intelligence
+
+**Sensitive Document Classification:**
+```
+site:domain.com ext:pdf "CONFIDENTIAL"
+site:domain.com ext:pdf "STRICTLY CONFIDENTIAL"  
+site:domain.com ext:pdf "HIGHLY CONFIDENTIAL"
+site:domain.com ext:pdf "PRIVATE"
+site:domain.com ext:pdf "INTERNAL USE ONLY"
+site:domain.com ext:pdf "NOT FOR DISTRIBUTION"
+site:domain.com ext:pdf "EMPLOYEE ONLY"
+site:domain.com ext:pdf "TRADE SECRET"
+```
+
+**Financial Document Discovery:**
+```
+site:domain.com ext:pdf "Credit Card"
+site:domain.com ext:pdf "Bank Account"
+site:domain.com ext:pdf "SSN"
+site:domain.com ext:pdf "Social Security"
+```
+
+### Email and Contact Discovery
+
+**Email Pattern Discovery:**
+```
+site:domain.com ext:pdf "@gmail.com"
+site:domain.com ext:pdf "@company.com"
+site:domain.com ext:pdf "email"
+site:domain.com ext:pdf "contact"
+```
+
+**Date of Birth Discovery:**
+```
+site:domain.com ext:pdf "date of birth"
+site:domain.com ext:pdf "DOB"
+site:domain.com ext:pdf "born"
+```
+
+### Pastebin Intelligence
+
+**Credential Leakage:**
+```
+site:pastebin.com "domain.com"
+site:pastebin.com "password"
+site:pastebin.com "API key"
+```
+
+### Historical Intelligence
+
+**Wayback Machine Integration:**
+```bash
+waymore -i domain.com -mode U -oU waymore_domain.txt
+cat waymore_domain.txt | grep "=http" | sort -u | uro > testurls.txt
+```
+
+**Archive Analysis:**
+```bash
+waybackurls domain.com > wayback_urls.txt
+cat wayback_urls.txt | grep "admin" > admin_urls.txt
+cat wayback_urls.txt | grep "login" > login_urls.txt
+```
+
+---
+
+## Advanced Dorking Strategies
+
+### Multi-Search Engine Approach
+
+When Google doesn't return results, try alternative search engines:
+- **Bing:** Often indexes content Google misses
+- **DuckDuckGo:** Different indexing algorithms  
+- **Yahoo:** Maintains separate index
+- **Yandex:** Useful for international content
+
+### Temporal Monitoring Strategy
+
+Set up regular monitoring for new content:
+```bash
+# Daily monitoring script
+#!/bin/bash
+DATE=$(date +%Y-%m-%d)
+google_dork_search "site:domain.com filetype:pdf" > "results_$DATE.txt"
+diff results_yesterday.txt "results_$DATE.txt" > new_findings.txt
+```
+
+### Negative Filtering for Precision
+
+```
+site:domain.com ext:pdf -public -sample -doc -docs -documentation -template -draft -application -form
+```
+
+### Cross-Reference Verification
+
+```bash
+# Combine multiple intelligence sources
+cat google_results.txt > all_findings.txt
+cat bing_results.txt >> all_findings.txt  
+cat wayback_results.txt >> all_findings.txt
+sort all_findings.txt | uniq > unique_findings.txt
+```
+
+---
+
+## Pro Tips and Best Practices
+
+### 1. Systematic Approach
+- Start broad, then narrow with specific operators
+- Document all findings with timestamps
+- Maintain organized wordlists and dork collections
+
+### 2. Avoiding Detection
+- Use VPNs and proxy rotation
+- Implement realistic delays between requests
+- Vary user agents and request patterns
+
+### 3. Legal and Ethical Considerations
+- Only test on authorized targets
+- Respect robots.txt and rate limits
+- Follow responsible disclosure practices
+
+### 4. Continuous Learning
+- Study other researchers' methodologies
+- Analyze successful bug bounty reports
+- Keep updated with new dork patterns and techniques
+
+### 5. Tool Integration
+- Combine manual dorking with automated tools
+- Use Burp Suite for request manipulation
+- Integrate findings with vulnerability scanners
+
+This comprehensive guide provides the foundation for advanced Google dorking techniques that can uncover significant security vulnerabilities through systematic reconnaissance and intelligent search query construction.
