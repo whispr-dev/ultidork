@@ -10,13 +10,17 @@ import argparse
 import json
 import sys
 import os
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import time
 import requests
+import re
+from colorama import Fore, Style, init
 from pathlib import Path
 from typing import List, Dict, Optional, Set, Any
 from datetime import datetime
-import re
-from colorama import Fore, Style, init
+from ultidork.lookyloo_capture import capture_url
 
 # Initialize colorama
 init(autoreset=True)
@@ -248,237 +252,54 @@ class UnifiedScanner:
 
         print(f"{Fore.GREEN}[+] Proxy pool initialized with {len(self.proxies)} usable proxies.{Style.RESET_ALL}")
 
-    async def scan_target(self, target: str):
-        """Perform comprehensive scan on a single target"""
-        print(f"\n{Fore.CYAN}{'='*60}{Style.RESET_ALL}")
-        print(f"{Fore.YELLOW}[*] Scanning target: {target}{Style.RESET_ALL}")
-        print(f"{Fore.CYAN}{'='*60}{Style.RESET_ALL}")
+    async def main():
+        parser = argparse.ArgumentParser(
+        description="OmniDork Unified Scanner - Quantum OSINT + Advanced Evasion"
+    )
 
-        results = {
-            'target': target,
-            'timestamp': datetime.now().isoformat(),
-            'dork_results': [],
-            'vulnerabilities': [],
-            'crawl_results': [],
-            'paywall_content': [],
-            'quantum_score': 0.0
-        }
+    # Target input
+    parser.add_argument(
+        'target',
+        help='Target domain/IP or file containing targets. Supports wildcards (*) and CIDR ranges'
+    )
 
-        # Ensure HTTPS support
-        protocols = []
-        if self.config.get('check_https', True) and not self.config.get('http_only', False):
-            protocols.append('https')
-        if self.config.get('check_http', True) and not self.config.get('https_only', False):
-            protocols.append('http')
-        if not protocols: # Fallback if neither is selected
-            protocols = ['https', 'http']
+    # Scanning options
+    parser.add_argument('--dorks', nargs='+', help='Custom Google dorks to use')
+    parser.add_argument('--no-dorks', action='store_true', help='Disable dorking')
+    parser.add_argument('--no-crawl', action='store_true', help='Disable crawling')
+    parser.add_argument('--depth', type=int, default=2, help='Crawler depth (default: 2)')
+    parser.add_argument('--threads', type=int, default=10, help='Concurrent threads (default: 10)')
 
+    # Proxy options
+    parser.add_argument('--proxy-file', help='File containing proxies')
+    parser.add_argument('--no-proxy-refresh', action='store_true', help='Disable automatic proxy refresh')
+    parser.add_argument('--proxy-test-url', default='http://mail.whispr.dev:9876/', help='Custom proxy test endpoint')
+    parser.add_argument('--max-proxies', type=int, default=1000, help='Maximum proxies to maintain')
 
-        for protocol in protocols:
-            full_target = f"{protocol}://{target}"
+    # Evasion options
+    parser.add_argument('--captcha-key', help='2Captcha API key for solving CAPTCHAs')
+    parser.add_argument('--bypass-paywall', action='store_true', help='Enable paywall bypass')
+    parser.add_argument('--headless', action='store_true', default=True, help='Run browsers in headless mode')
 
-            # Select a proxy for this target/protocol if available
-            proxy_to_use = None
-            proxy_info_for_log = {}
-            if self.proxies:
-                proxy_info_for_log = self.proxies[self.current_proxy_index % len(self.proxies)]
-                proxy_to_use = f"{proxy_info_for_log['protocol']}://{proxy_info_for_log['host']}:{proxy_info_for_log['port']}"
-                self.current_proxy_index += 1
-                print(f"  [>] Using proxy: {proxy_to_use} (Speed: {proxy_info_for_log['speed_rating']}, Security: {proxy_info_for_log['security_level']})")
+    # Protocol options
+    parser.add_argument('--http-only', action='store_true', help='Only scan HTTP (skip HTTPS)')
+    parser.add_argument('--no-https', action='store_true', dest='https_only', help='Only scan HTTPS (skip HTTP) - changed name for clarity')
 
+    # Output options
+    parser.add_argument('-o', '--output', default='omnidork_report.json', help='Output report file')
+    parser.add_argument('-v', '--verbose', action='store_true', help='Verbose output')
 
-            # 1. Dork scanning
-            if self.config.get('enable_dorking', True):
-                print(f"\n{Fore.YELLOW}[*] Running dork scans...{Style.RESET_ALL}")
-                # Pass the selected proxy to DorkEngine's search method
-                dork_results = await self.run_dork_scan(target, proxy_to_use)
-                results['dork_results'].extend(dork_results)
+    args = parser.parse_args()
 
-            # 2. Crawling
-            if self.config.get('enable_crawling', True):
-                print(f"\n{Fore.YELLOW}[*] Crawling {full_target}...{Style.RESET_ALL}")
-                # Pass the selected proxy to Crawler
-                crawl_results = await self.run_crawler(full_target, proxy_to_use)
-                results['crawl_results'].extend(crawl_results)
-
-            # 3. Vulnerability analysis
-            print(f"\n{Fore.YELLOW}[*] Analyzing for vulnerabilities...{Style.RESET_ALL}")
-            vulnerabilities = await self.analyze_vulnerabilities(target, results)
-            results['vulnerabilities'].extend(vulnerabilities)
-
-            # 4. Paywall/content extraction if needed
-            if self.config.get('enable_paywall_bypass', True):
-                for result in results['crawl_results']:
-                    if self.is_paywalled_url(result['url']):
-                        print(f"{Fore.YELLOW}[*] Attempting paywall bypass for: {result['url']}{Style.RESET_ALL}")
-                        # Pass the selected proxy to bypass_paywall if it supports it
-                        content = await self.bypass_paywall(result['url'], proxy_to_use)
-                        if content:
-                            results['paywall_content'].append({
-                                'url': result['url'],
-                                'content': content[:1000] + '...'
-                            })
-
-        # 5. Calculate quantum score
-        results['quantum_score'] = self.calculate_quantum_score(results)
-
-        self.results[target] = results
-        return results
-
-    async def run_dork_scan(self, target: str, proxy: Optional[str] = None) -> List[Dict]:
-        """Run Google dork scans, optionally using a proxy."""
-        dorks = self.config.get('dorks', [
-            'inurl:admin',
-            'inurl:login',
-            'intext:password',
-            'filetype:pdf confidential',
-            'filetype:xlsx',
-            'filetype:sql',
-            'inurl:backup',
-            'inurl:wp-content',
-            'inurl:.git',
-            'inurl:api',
-            'inurl:v1',
-            'inurl:swagger',
-            'intext:"api key"',
-            'intext:"private key"'
-        ])
-
-        all_results = []
-        for dork in dorks:
-            try:
-                print(f"  {Fore.CYAN}[>] Trying dork: {dork}{Style.RESET_ALL}")
-                # Ensure DorkEngine.search accepts a 'proxy' argument
-                results = await self.dork_engine.search(dork, target, max_results=10, proxy=proxy)
-                all_results.extend(results)
-                if results:
-                    print(f"  {Fore.GREEN}[+] Found {len(results)} results{Style.RESET_ALL}")
-            except Exception as e:
-                print(f"  {Fore.RED}[!] Dork failed: {e}{Style.RESET_ALL}")
-
-        return all_results
-
-    async def run_crawler(self, url: str, proxy: Optional[str] = None) -> List[Dict]:
-        """Run web crawler, optionally using a proxy."""
-        crawler = Crawler(
-            # Assuming Crawler can take a proxy directly or a proxy manager.
-            # If your Crawler expects a ProxyManager object, you'll need to
-            # update ProxyManager to be able to return a specific proxy for a single request.
-            # For simplicity, if Crawler's __init__ or crawl method takes a proxy string:
-            proxy_scanner=self.proxy_manager, # Still passing the manager if it's expected
-            concurrent_requests=self.config.get('crawler_threads', 10),
-            max_depth=self.config.get('crawler_depth', 2)
-        )
-        # Assuming Crawler.crawl can take an optional 'proxy' argument
-        try:
-            results = await crawler.crawl(url, depth=2, proxy=proxy)
-            return [r.__dict__ for r in results]
-        except Exception as e:
-            print(f"  {Fore.RED}[!] Crawler error: {e}{Style.RESET_ALL}")
-            return []
-
-    async def analyze_vulnerabilities(self, target: str, scan_results: Dict) -> List[Dict]:
-        """Analyze all results for vulnerabilities"""
-        findings = await self.vulnerability_matcher.analyze_findings(
-            target,
-            scan_results.get('dork_results', []),
-            [],  # Shodan results
-            [],  # URLScan results
-            [],  # DNS info
-            [],  # JS analysis
-            []   # Cloud storage
-        )
-
-        # Analyze crawled content
-        for crawl_result in scan_results.get('crawl_results', []):
-            matches = self.vulnerability_matcher.analyze_content(
-                crawl_result.get('url', ''),
-                crawl_result.get('content', '')
-            )
-            findings.extend(matches)
-
-        return findings
-
-    async def bypass_paywall(self, url: str, proxy: Optional[str] = None) -> Optional[str]:
-        """Attempt to bypass paywall, optionally using a proxy."""
-        try:
-            # Assuming PaywallBuster's fetch_article_text can take a 'proxy' argument
-            return await self.paywall_buster.fetch_article_text(url, proxy=proxy)
-        except Exception as e:
-            print(f"  {Fore.RED}[!] Paywall bypass failed: {e}{Style.RESET_ALL}")
-            return None
-
-    def is_paywalled_url(self, url: str) -> bool:
-        """Check if URL is likely paywalled"""
-        paywalled_domains = [
-            'medium.com', 'wsj.com', 'nytimes.com', 'ft.com',
-            'economist.com', 'bloomberg.com', 'businessinsider.com'
-        ]
-        return any(domain in url.lower() for domain in paywalled_domains)
-
-    def calculate_quantum_score(self, results: Dict) -> float:
-        """Calculate overall quantum score for findings"""
-        score = 0.0
-
-        # Score based on vulnerability severity
-        for vuln in results.get('vulnerabilities', []):
-            severity_scores = {'Critical': 10, 'High': 7, 'Medium': 4, 'Low': 1}
-            score += severity_scores.get(vuln.get('severity', 'Low'), 0)
-
-        # Bonus for dork results
-        score += len(results.get('dork_results', [])) * 0.5
-
-        # Bonus for successful paywall bypass
-        score += len(results.get('paywall_content', [])) * 2
-
-        return min(score, 100.0)  # Cap at 100
-
-    async def scan_all_targets(self):
-        """Scan all loaded targets"""
-        print(f"\n{Fore.CYAN}[*] Starting scan of {len(self.targets)} targets{Style.RESET_ALL}")
-
-        for i, target in enumerate(self.targets, 1):
-            print(f"\n{Fore.YELLOW}[*] Progress: {i}/{len(self.targets)}{Style.RESET_ALL}")
-            await self.scan_target(target)
-
-    def generate_report(self, output_file: str):
-        """Generate comprehensive report"""
-        report = {
-            'scan_info': {
-                'timestamp': datetime.now().isoformat(),
-                'targets_scanned': len(self.targets),
-                'total_vulnerabilities': sum(len(r.get('vulnerabilities', [])) for r in self.results.values()),
-                'proxies_used': len(self.proxies) # This now reflects *usable* proxies
-            },
-            'results': self.results
-        }
-
-        # Save JSON report
-        with open(output_file, 'w') as f:
-            json.dump(report, f, indent=2)
-
-        # Generate summary
-        print(f"\n{Fore.CYAN}{'='*60}{Style.RESET_ALL}")
-        print(f"{Fore.YELLOW}SCAN SUMMARY{Style.RESET_ALL}")
-        print(f"{Fore.CYAN}{'='*60}{Style.RESET_ALL}")
-
-        total_vulns = 0
-        critical_vulns = 0
-
-        for target, results in self.results.items():
-            vulns = results.get('vulnerabilities', [])
-            total_vulns += len(vulns)
-            critical_vulns += sum(1 for v in vulns if v.get('severity') == 'Critical')
-
-            print(f"\n{Fore.YELLOW}Target: {target}{Style.RESET_ALL}")
-            print(f"  Vulnerabilities: {len(vulns)}")
-            print(f"  Quantum Score: {results.get('quantum_score', 0):.2f}")
-            print(f"  Dork Results: {len(results.get('dork_results', []))}")
-
-        print(f"\n{Fore.GREEN}Total Vulnerabilities Found: {total_vulns}{Style.RESET_ALL}")
-        print(f"{Fore.RED}Critical Vulnerabilities: {critical_vulns}{Style.RESET_ALL}")
-        print(f"\n{Fore.CYAN}Full report saved to: {output_file}{Style.RESET_ALL}")
-
+def fetch_proxy_list(url):
+    try:
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200 and response.text.strip():
+            print(f"[+] Proxies loaded from: {url}")
+            return response.text.splitlines()
+    except Exception as e:
+        print(f"[!] Failed to fetch proxies from {url}: {e}")
+    return []
 
 async def main():
     parser = argparse.ArgumentParser(
@@ -501,8 +322,7 @@ async def main():
     # Proxy options
     parser.add_argument('--proxy-file', help='File containing proxies')
     parser.add_argument('--no-proxy-refresh', action='store_true', help='Disable automatic proxy refresh')
-    parser.add_argument('--proxy-test-url', default='http://mail.whispr.dev:9876/', # Default to YOUR endpoint
-                       help='Custom proxy test endpoint')
+    parser.add_argument('--proxy-test-url', default='http://mail.whispr.dev:9876/', help='Custom proxy test endpoint')
     parser.add_argument('--max-proxies', type=int, default=1000, help='Maximum proxies to maintain')
 
     # Evasion options
@@ -512,8 +332,7 @@ async def main():
 
     # Protocol options
     parser.add_argument('--http-only', action='store_true', help='Only scan HTTP (skip HTTPS)')
-    parser.add_argument('--no-https', action='store_true', dest='https_only', help='Only scan HTTPS (skip HTTP) - changed name for clarity') # NOTE: RENAMED FOR CLARITY
-    # parser.add_argument('--https-only', action='store_true', help='Only scan HTTPS (skip HTTP)') # Original line commented out
+    parser.add_argument('--no-https', action='store_true', dest='https_only', help='Only scan HTTPS (skip HTTP) - changed name for clarity')
 
     # Output options
     parser.add_argument('-o', '--output', default='omnidork_report.json', help='Output report file')
@@ -521,7 +340,23 @@ async def main():
 
     args = parser.parse_args()
 
-    # Build configuration
+    proxy_sources = [
+        'http://list.didsoft.com/get?email=got.girl.camera@gmail.com&pass=3t8q44&pid=http1000&showcountry=no',
+        'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt',
+        'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-raw.txt',
+        'https://api.proxyscrape.com/v2/?request=getproxies&protocol=http',
+    ]
+
+    all_proxies = []
+    for src in proxy_sources:
+        proxies = fetch_proxy_list(src)
+        if proxies:
+            all_proxies.extend(proxies)
+            if src.startswith("http://list.didsoft.com"):  # Premium, stop after success
+                break
+        time.sleep(2)  # Optional cooldown between sources
+
+    # Build configuration dict
     config = {
         'enable_dorking': not args.no_dorks,
         'enable_crawling': not args.no_crawl,
@@ -533,35 +368,11 @@ async def main():
         'max_proxies': args.max_proxies,
         'captcha_api_key': args.captcha_key,
         'headless': args.headless,
-        'check_https': not args.https_only, # Use the new name here
+        'check_https': not args.https_only,
         'check_http': not args.http_only,
         'verbose': args.verbose,
-
-        def fetch_proxy_list(url):
-            try:
-                response = requests.get(url, timeout=10)
-                if response.status_code == 200 and response.text.strip():
-                    print(f"[+] Proxies loaded from: {url}")
-                    return response.text.splitlines()
-            except Exception as e:
-                print(f"[!] Failed to fetch proxies from {url}: {e}")
-            return []
-
-        proxy_sources = [
-            'http://list.didsoft.com/get?email=got.girl.camera@gmail.com&pass=3t8q44&pid=http1000&showcountry=no',
-            'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt',
-            'https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-raw.txt',
-            'https://api.proxyscrape.com/v2/?request=getproxies&protocol=http',
-        ]
-
-        all_proxies = []
-        for src in proxy_sources:
-            proxies = fetch_proxy_list(src)
-            if proxies:
-                all_proxies.extend(proxies)
-                if src.startswith("http://list.didsoft.com"):  # Premium, stop after success
-                    break
-            time.sleep(2)  # Optional cooldown between sources
+        'proxy_sources': proxy_sources,
+        # Optionally, you can add 'all_proxies': all_proxies if you want to pre-populate somewhere
     }
 
     if args.dorks:
@@ -590,7 +401,6 @@ async def main():
         if args.verbose:
             import traceback
             traceback.print_exc()
-
 
 if __name__ == "__main__":
     asyncio.run(main())
