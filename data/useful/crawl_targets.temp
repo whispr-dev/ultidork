@@ -1,0 +1,257 @@
+# crawl_targets.py
+"""
+Website Targets for Crawling and Testing
+========================================
+Categorized lists of websites for different testing purposes
+"""
+
+CRAWL_TARGETS = {
+    "bug_bounty_platforms": [
+        # Major bug bounty platforms
+        "https://hackerone.com/directory/programs",
+        "https://bugcrowd.com/programs",
+        "https://www.intigriti.com/programs",
+        "https://www.yeswehack.com/programs",
+        "https://www.synack.com/",
+        "https://zerocopter.com/",
+        "https://www.openbugbounty.org/",
+        "https://bughunt.com.br/programs",
+        "https://www.vulnerability-lab.com/",
+        "https://cobalt.io/",
+    ],
+    
+    "security_resources": [
+        # Security learning and reference sites
+        "https://owasp.org/www-project-top-ten/",
+        "https://portswigger.net/web-security",
+        "https://cwe.mitre.org/top25/",
+        "https://www.exploit-db.com/",
+        "https://nvd.nist.gov/",
+        "https://cve.mitre.org/",
+        "https://www.rapid7.com/db/",
+        "https://vuldb.com/",
+        "https://snyk.io/vuln/",
+        "https://security.snyk.io/",
+    ],
+    
+    "paywalled_sites": [
+        # Sites with paywalls for testing bypass
+        "https://medium.com/",
+        "https://www.wsj.com/",
+        "https://www.nytimes.com/",
+        "https://www.ft.com/",
+        "https://www.economist.com/",
+        "https://www.bloomberg.com/",
+        "https://www.businessinsider.com/",
+        "https://www.wired.com/",
+        "https://www.washingtonpost.com/",
+        "https://www.thetimes.co.uk/",
+        "https://www.telegraph.co.uk/",
+        "https://seekingalpha.com/",
+        "https://www.barrons.com/",
+        "https://www.nature.com/",
+        "https://www.sciencedirect.com/",
+    ],
+    
+    "tech_news": [
+        # Tech news sites for content discovery
+        "https://techcrunch.com/",
+        "https://www.theverge.com/",
+        "https://arstechnica.com/",
+        "https://www.techmeme.com/",
+        "https://news.ycombinator.com/",
+        "https://www.reddit.com/r/technology/",
+        "https://slashdot.org/",
+        "https://www.engadget.com/",
+        "https://gizmodo.com/",
+        "https://www.tomshardware.com/",
+        "https://www.anandtech.com/",
+        "https://www.bleepingcomputer.com/",
+        "https://thehackernews.com/",
+        "https://krebsonsecurity.com/",
+    ],
+    
+    "developer_resources": [
+        # Developer documentation and resources
+        "https://developer.mozilla.org/",
+        "https://stackoverflow.com/",
+        "https://github.com/",
+        "https://gitlab.com/",
+        "https://bitbucket.org/",
+        "https://www.npmjs.com/",
+        "https://pypi.org/",
+        "https://crates.io/",
+        "https://rubygems.org/",
+        "https://packagist.org/",
+        "https://docs.microsoft.com/",
+        "https://developers.google.com/",
+        "https://developer.apple.com/",
+        "https://aws.amazon.com/documentation/",
+    ],
+    
+    "api_directories": [
+        # API documentation and directories
+        "https://rapidapi.com/",
+        "https://www.programmableweb.com/",
+        "https://apilist.fun/",
+        "https://publicapis.io/",
+        "https://any-api.com/",
+        "https://apis.guru/",
+        "https://www.postman.com/explore/",
+        "https://swagger.io/tools/swagger-ui/",
+        "https://stoplight.io/",
+        "https://readme.com/",
+    ],
+    
+    "vulnerability_databases": [
+        # Vulnerability and exploit databases
+        "https://www.exploit-db.com/",
+        "https://packetstormsecurity.com/",
+        "https://0day.today/",
+        "https://seclists.org/",
+        "https://www.securityfocus.com/",
+        "https://vulners.com/",
+        "https://www.vulnerability-notes.com/",
+        "https://www.kb.cert.org/vuls/",
+        "https://www.zerodayinitiative.com/advisories/published/",
+        "https://github.com/offensive-security/exploitdb",
+    ],
+    
+    "cloud_providers": [
+        # Cloud service providers for enumeration
+        "https://aws.amazon.com/",
+        "https://cloud.google.com/",
+        "https://azure.microsoft.com/",
+        "https://www.digitalocean.com/",
+        "https://www.linode.com/",
+        "https://www.vultr.com/",
+        "https://www.ovhcloud.com/",
+        "https://www.alibaba.cloud/",
+        "https://www.oracle.com/cloud/",
+        "https://www.ibm.com/cloud",
+    ],
+    
+    "code_repositories": [
+        # Code hosting platforms
+        "https://github.com/trending",
+        "https://gitlab.com/explore",
+        "https://bitbucket.org/repo/all",
+        "https://sourceforge.net/",
+        "https://codeberg.org/",
+        "https://gitea.com/",
+        "https://sr.ht/",
+        "https://launchpad.net/",
+        "https://savannah.gnu.org/",
+    ],
+    
+    "subdomain_wordlists": [
+        # Sources for subdomain wordlists
+        "https://github.com/danielmiessler/SecLists/tree/master/Discovery/DNS",
+        "https://github.com/assetnote/commonspeak2-wordlists",
+        "https://github.com/fuzzdb-project/fuzzdb",
+        "https://github.com/google/fuzzing/tree/master/dictionaries",
+        "https://wordlists.assetnote.io/",
+    ],
+    
+    "testing_targets": [
+        # Legal testing targets
+        "http://testphp.vulnweb.com/",
+        "http://demo.testfire.net/",
+        "http://www.webscantest.com/",
+        "http://crackme.cenzic.com/",
+        "http://aspnet.testsparker.com/",
+        "http://php.testsparker.com/",
+        "http://testaspnet.vulnweb.com/",
+        "http://testasp.vulnweb.com/",
+        "http://testhtml5.vulnweb.com/",
+        "https://juice-shop.herokuapp.com/",
+    ],
+    
+    "social_media": [
+        # Social media platforms (for OSINT)
+        "https://twitter.com/",
+        "https://www.facebook.com/",
+        "https://www.instagram.com/",
+        "https://www.linkedin.com/",
+        "https://www.youtube.com/",
+        "https://www.tiktok.com/",
+        "https://www.reddit.com/",
+        "https://www.pinterest.com/",
+        "https://www.snapchat.com/",
+        "https://discord.com/",
+    ]
+}
+
+# Specific target lists for different purposes
+PAYWALL_TEST_URLS = [
+    # Specific articles for paywall testing
+    "https://medium.com/@username/article-title",
+    "https://www.wsj.com/articles/example-article",
+    "https://www.nytimes.com/2024/01/01/technology/example.html",
+    # Add more specific URLs as needed
+]
+
+OPEN_REDIRECT_TEST_PATTERNS = [
+    # URL patterns commonly vulnerable to open redirect
+    "/redirect?url=",
+    "/redir?to=",
+    "/out?target=",
+    "/away?url=",
+    "/exit?redirect=",
+    "/leave?site=",
+    "/goto?url=",
+    "/return?url=",
+    "/continue?next=",
+    "/proceed?destination=",
+]
+
+API_ENDPOINT_PATTERNS = [
+    # Common API endpoint patterns
+    "/api/v1/",
+    "/api/v2/",
+    "/api/v3/",
+    "/rest/",
+    "/graphql",
+    "/api/users/",
+    "/api/auth/",
+    "/api/admin/",
+    "/api/internal/",
+    "/api/private/",
+    "/.well-known/",
+    "/swagger/",
+    "/api-docs/",
+    "/openapi.json",
+]
+
+def get_targets_by_category(category):
+    """Get targets for a specific category"""
+    return CRAWL_TARGETS.get(category, [])
+
+def get_all_targets():
+    """Get all targets as a flat list"""
+    all_targets = []
+    for target_list in CRAWL_TARGETS.values():
+        all_targets.extend(target_list)
+    return list(set(all_targets))  # Remove duplicates
+
+def get_paywall_sites():
+    """Get sites known to have paywalls"""
+    return CRAWL_TARGETS.get("paywalled_sites", [])
+
+def get_bug_bounty_targets():
+    """Get bug bounty platform URLs"""
+    return CRAWL_TARGETS.get("bug_bounty_platforms", [])
+
+def get_test_targets():
+    """Get legal testing targets"""
+    return CRAWL_TARGETS.get("testing_targets", [])
+
+if __name__ == "__main__":
+    print(f"Total unique targets: {len(get_all_targets())}")
+    print("\nTargets by category:")
+    for category, targets in CRAWL_TARGETS.items():
+        print(f"  {category}: {len(targets)} targets")
+    
+    print("\nSample bug bounty targets:")
+    for target in get_bug_bounty_targets()[:5]:
+        print(f"  - {target}")

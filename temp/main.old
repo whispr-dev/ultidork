@@ -1,0 +1,78 @@
+
+import sys
+import json
+import time
+import socket
+from pathlib import Path
+from urllib.parse import urlparse
+from colorama import Fore, Style, init
+from rapidproxyscan import ProxyTester
+
+init(autoreset=True)  # Colorama init
+
+TARGET_JSON = "../utidork's_target_list_first.json"
+TARGET_TXT = "target_list.txt"
+proxy_tester = ProxyTester()
+
+def load_targets():
+    targets = []
+    json_path = Path(TARGET_JSON)
+    txt_path = Path(TARGET_TXT)
+
+    if json_path.exists():
+        print(f"{Fore.CYAN}[+] Loading targets from {json_path}{Style.RESET_ALL}")
+        with open(json_path, "r") as f:
+            try:
+                raw = json.load(f)
+                targets = [t.strip() for t in raw if isinstance(t, str) and t.strip()]
+            except Exception as e:
+                print(f"{Fore.RED}[-] JSON load error: {e}{Style.RESET_ALL}")
+                sys.exit(1)
+    elif txt_path.exists():
+        print(f"{Fore.CYAN}[+] Loading targets from {txt_path}{Style.RESET_ALL}")
+        with open(txt_path, "r") as f:
+            targets = [line.strip() for line in f if line.strip()]
+    else:
+        print(f"{Fore.RED}[-] No target list found.{Style.RESET_ALL}")
+        sys.exit(1)
+
+    if not targets:
+        print(f"{Fore.RED}[-] No valid targets to scan.{Style.RESET_ALL}")
+        sys.exit(1)
+    return targets
+
+async def scan_domain(domain):
+    parsed = urlparse(domain)
+    host = parsed.netloc or parsed.path
+    proxy_url = f"http://{host}:8080"  # Example proxy format; adjust if needed
+
+    print(f"{Fore.YELLOW}[>] Scanning: {domain}{Style.RESET_ALL}")
+
+    try:
+        result = await proxy_tester.test_proxy(proxy_url)
+        if result.get("is_usable"):
+            print(f"{Fore.GREEN}[✔] {host} passed proxy test ({result['speed_rating']}, {result['security_level']}){Style.RESET_ALL}")
+        else:
+            print(f"{Fore.RED}[-] {host} failed test: {result['description']}{Style.RESET_ALL}")
+    except Exception as e:
+        print(f"{Fore.RED}[-] Error scanning {host}: {e}{Style.RESET_ALL}")
+
+def main():
+    import asyncio
+
+    if len(sys.argv) > 1:
+        domain = sys.argv[1]
+        print(f"{Fore.CYAN}[>] Single domain scan mode: {domain}{Style.RESET_ALL}")
+        asyncio.run(scan_domain(domain))
+    else:
+        targets = load_targets()
+        print(f"{Fore.CYAN}[+] Loaded {len(targets)} targets.{Style.RESET_ALL}\n")
+
+        for domain in targets:
+            asyncio.run(scan_domain(domain))
+            time.sleep(1)
+
+    print(f"\n{Fore.GREEN}[✓] Scanning complete.{Style.RESET_ALL}")
+
+if __name__ == "__main__":
+    main()

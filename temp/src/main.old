@@ -1,0 +1,424 @@
+// src/main.rs - Ultimate Quantum OSINT Engine
+use omnidork::crawler::Crawler;
+use omnidork::dork_engine::DorkEngine;
+use omnidork::proxy_scanner::ProxyScanner;
+use omnidork::quantum_osint::QuantumScorer;
+use omnidork::vulnerability_matcher::VulnerabilityMatcher;
+use std::error::Error;
+use std::sync::Arc;
+use std::process::Command;
+use tokio::sync::Mutex;
+use log::info;
+use serde_json;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
+    env_logger::init();
+    info!("🚀 Starting ULTIMATE Quantum OSINT Engine");
+
+    // Initialize components
+    let quantum_scorer = Arc::new(QuantumScorer::new(1000));
+    let vulnerability_matcher = Arc::new(VulnerabilityMatcher::new());
+    
+    // STEP 1: LAUNCH RAPIDPROXYSCAN FOR ELITE PROXY ACQUISITION
+    info!("🔥 Launching RapidProxyScan for elite proxy acquisition...");
+    launch_rapidproxyscan().await?;
+    
+    // STEP 2: LOAD ELITE PROXIES FROM PYTHON SCANNER
+    let elite_proxies = load_elite_proxies().await?;
+    info!("⚡ Loaded {} elite proxies", elite_proxies.len());
+    
+    // STEP 3: INITIALIZE QUANTUM-ENHANCED COMPONENTS
+    let proxies = Arc::new(Mutex::new(elite_proxies));
+    let dork_engine = Arc::new(DorkEngine::new(Arc::clone(&proxies)));
+    
+    // Create crawler with proxy scanner (for compatibility)
+    let proxy_scanner = Arc::new(ProxyScanner::new_with_config(150, 3, 5.0, true));
+    let crawler = Arc::new(Crawler::new(Arc::clone(&proxy_scanner), 50, 2));
+
+    // STEP 4: ADVANCED TARGET SELECTION INTERFACE
+    let targets = interactive_target_selection().await?;
+    
+    // STEP 5: QUANTUM DORKING WITH ELITE PATTERNS
+    let elite_dorks = get_elite_dork_patterns();
+    
+    info!("🎯 Beginning quantum OSINT scan on {} targets", targets.len());
+    
+    // STEP 6: EXECUTE QUANTUM SCAN LOOP
+    for target in targets {
+        info!("🔍 Quantum scanning: {}", target);
+        
+        // Enhanced dorking with paywall bypass
+        let mut all_results = Vec::new();
+        for dork in &elite_dorks {
+            let results = dork_engine.search(dork, &target, 25).await?;
+            all_results.extend(results);
+        }
+        
+        // STEP 7: INTELLIGENT CRAWLING WITH PAYWALL BYPASS
+        let crawl_results = quantum_crawl_with_paywall_bypass(&target, &crawler).await?;
+        
+        // STEP 8: VULNERABILITY ANALYSIS WITH QUANTUM SCORING
+        let findings = vulnerability_matcher
+            .analyze_findings(
+                &target,
+                &all_results,
+                &[], // Shodan results (could be enhanced)
+                &[], // URLScan results
+                &[], // DNS info
+                &[], // JS analysis
+                &[], // Cloud storage
+            )
+            .await?;
+
+        // STEP 9: ENHANCED PAYWALL CONTENT ANALYSIS
+        for result in crawl_results {
+            if is_paywalled_content(&result.url) {
+                info!("🧠 Bypassing paywall for: {}", result.url);
+                let bypassed_content = bypass_paywall_content(&result).await?;
+                let matches = vulnerability_matcher.analyze_content(&result.url, &bypassed_content);
+                
+                for m in matches {
+                    println!(
+                        "🎯 PAYWALL BYPASS VULN: {} at {} (Quantum Score: {:.2})",
+                        m.pattern_name, m.url, m.quantum_score
+                    );
+                }
+            }
+        }
+
+        // STEP 10: QUANTUM-RANKED OUTPUT
+        output_quantum_findings(&target, &findings, &quantum_scorer).await?;
+    }
+
+    info!("🌟 Quantum OSINT scan complete - Ready for world domination!");
+    Ok(())
+}
+
+async fn launch_rapidproxyscan() -> Result<(), Box<dyn Error + Send + Sync>> {
+    info!("🔥 Launching Python RapidProxyScan...");
+    
+    let output = Command::new("python3")
+        .args([
+            "rapidproxyscan-v-0-4-0.py",
+            "--single-run",
+            "--connection-limit", "500",
+            "--validation-rounds", "3", 
+            "--timeout", "3.0",
+            "--test-url", "http://proxy-test.fastping.it.com/",
+            "--export-interval", "60"
+        ])
+        .output()?;
+    
+    if output.status.success() {
+        info!("✅ RapidProxyScan completed successfully");
+    } else {
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        info!("⚠️ RapidProxyScan output: {}", stderr);
+    }
+    
+    Ok(())
+}
+
+async fn load_elite_proxies() -> Result<Vec<crate::proxy_scanner::ProxyInfo>, Box<dyn Error + Send + Sync>> {
+    use std::fs;
+    use std::time::{SystemTime, UNIX_EPOCH};
+    
+    // Look for the most recent exported proxies
+    let exported_dir = "exported_proxies";
+    let mut proxy_files = Vec::new();
+    
+    if let Ok(entries) = fs::read_dir(exported_dir) {
+        for entry in entries {
+            if let Ok(entry) = entry {
+                let path = entry.path();
+                if path.extension().map_or(false, |ext| ext == "txt") {
+                    proxy_files.push(path);
+                }
+            }
+        }
+    }
+    
+    // Sort by modification time, newest first
+    proxy_files.sort_by(|a, b| {
+        let a_meta = fs::metadata(a).unwrap();
+        let b_meta = fs::metadata(b).unwrap();
+        b_meta.modified().unwrap().cmp(&a_meta.modified().unwrap())
+    });
+    
+    let mut elite_proxies = Vec::new();
+    
+    if let Some(latest_file) = proxy_files.first() {
+        info!("📁 Loading proxies from: {:?}", latest_file);
+        let content = fs::read_to_string(latest_file)?;
+        
+        for line in content.lines() {
+            if let Some((ip, port)) = line.trim().split_once(':') {
+                if let Ok(port_num) = port.parse::<u16>() {
+                    elite_proxies.push(crate::proxy_scanner::ProxyInfo {
+                        ip: ip.to_string(),
+                        port: port_num,
+                        protocol: "http".to_string(),
+                        anonymity: "elite".to_string(),
+                        response_time: 0.0,
+                        country: "unknown".to_string(),
+                        last_checked: SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs(),
+                        success_rate: 1.0,
+                        stability_score: 1.0,
+                        region: None,
+                        asn: None,
+                        quantum_score: 5.0, // Elite proxies get high quantum score
+                    });
+                }
+            }
+        }
+    }
+    
+    Ok(elite_proxies)
+}
+
+async fn interactive_target_selection() -> Result<Vec<String>, Box<dyn Error + Send + Sync>> {
+    use std::io::{self, Write};
+    
+    println!("🎯 QUANTUM TARGET SELECTION");
+    println!("Choose your targets:");
+    println!("1. Single domain");
+    println!("2. Load from file");
+    println!("3. Trending analysis mode");
+    println!("4. Predefined elite list");
+    
+    print!("Enter choice (1-4): ");
+    io::stdout().flush()?;
+    
+    let mut input = String::new();
+    io::stdin().read_line(&mut input)?;
+    
+    match input.trim() {
+        "1" => {
+            print!("Enter domain: ");
+            io::stdout().flush()?;
+            let mut domain = String::new();
+            io::stdin().read_line(&mut domain)?;
+            Ok(vec![domain.trim().to_string()])
+        },
+        "2" => {
+            print!("Enter file path: ");
+            io::stdout().flush()?;
+            let mut path = String::new();
+            io::stdin().read_line(&mut path)?;
+            let content = std::fs::read_to_string(path.trim())?;
+            Ok(content.lines().map(|s| s.trim().to_string()).collect())
+        },
+        "3" => {
+            // Trending analysis - get hot domains
+            Ok(get_trending_targets().await?)
+        },
+        "4" | _ => {
+            // Predefined elite list
+            Ok(vec![
+                "https://www.bybit.com".to_string(),
+                "https://koho.ca".to_string(),
+                "*.monzo.com*.monzo.com*".to_string(),
+                ".prod-ffs.io".to_string(),
+                "co.uk.getmondo".to_string(),
+                "api.truelayer[-sandbox].com".to_string(),
+                "auth.truelayer[-sandbox].com".to_string(),
+                "login-api.truelayer[-sandbox].com".to_string(),
+                "login.truelayer[-sandbox].com".to_string(),
+                "onboarding-api.truelayer.com".to_string(),
+                "pay-api.truelayer[-sandbox].com".to_string(),
+                "pay.truelayer[-sandbox].com".to_string(),
+                "paydirect.truelayer[-sandbox].com".to_string(),
+                "payment.truelayer[-sandbox].com".to_string(),
+                "payouts.truelayer[-sandbox].com".to_string(),
+                "users-api.truelayer.com".to_string(),
+                "console-backend.truelayer[-sandbox].com".to_string(),
+                "console.truelayer[-sandbox].com".to_string(),
+                "hpp.truelayer[-sandbox].com".to_string(),
+                "webhooks.truelayer[-sandbox].com".to_string(),
+                "*.truelayer.cloud".to_string(),
+                "*.truelayer.com".to_string(),
+                "*.truelayer.io".to_string(),
+                "*.sqills.com".to_string(),
+                "*.sqills.team".to_string(),
+                "*.allegro.cz.allegrosandbox.pl".to_string(),
+                "*.allegro.pl.allegrosandbox.pl".to_string(),
+                "*.allegro.sk.allegrosandbox.pl".to_string(),
+                "alchemy.veriff.com".to_string(),
+                "api.flamingo-eu.veriff.com".to_string(),
+                "api.us.veriff.me".to_string(),
+                "api.veriff.me".to_string(),
+                "com.veriff.demo".to_string(),
+                "louvre.veriff.me".to_string(),
+                "magic.veriff.me".to_string(),
+                "station.veriff.com".to_string(),
+                "stationapi.veriff.com".to_string(),
+                "*.veriff.com".to_string(),
+                "developers.veriff.me".to_string(),
+                "`www.veriff.com".to_string(),
+                "https://*.saytechnologies.com".to_string(),
+                "https://*.say.rocks".to_string(),
+            ])
+        }
+    }
+}
+
+fn get_elite_dork_patterns() -> Vec<&'static str> {
+    vec![
+        // Classic admin hunting
+        "inurl:admin",
+        "inurl:administrator", 
+        "inurl:login",
+        "inurl:dashboard",
+        "inurl:control-panel",
+        "inurl:wp-admin",
+        "inurl:phpmyadmin",
+        
+        // Sensitive files
+        "filetype:pdf confidential",
+        "filetype:doc internal",
+        "filetype:xls financial",
+        "filetype:ppt presentation",
+        "filetype:sql database",
+        "filetype:log",
+        "filetype:bak",
+        "filetype:env",
+        
+        // API endpoints
+        "inurl:api",
+        "inurl:v1",
+        "inurl:v2", 
+        "inurl:graphql",
+        "inurl:rest",
+        "inurl:swagger",
+        "inurl:docs/api",
+        
+        // Development artifacts
+        "inurl:test",
+        "inurl:dev",
+        "inurl:staging",
+        "inurl:beta",
+        "inurl:debug",
+        "inurl:.git",
+        "inurl:composer.json",
+        "inurl:package.json",
+        
+        // Cloud storage
+        "site:s3.amazonaws.com",
+        "site:blob.core.windows.net",
+        "site:storage.googleapis.com",
+        
+        // Credentials and secrets
+        "intext:password",
+        "intext:username",
+        "intext:api_key",
+        "intext:secret_key",
+        "intext:access_token",
+        "intext:private_key",
+        
+        // Error pages that leak info
+        "intext:\"Fatal error\"",
+        "intext:\"Warning: mysql\"",
+        "intext:\"error in your SQL syntax\"",
+        "intext:\"Exception Details\"",
+    ]
+}
+
+async fn get_trending_targets() -> Result<Vec<String>, Box<dyn Error + Send + Sync>> {
+    // This would integrate with trending APIs, social media, etc.
+    // For now, return some hot targets
+    info!("🔥 Analyzing trending targets...");
+    
+    Ok(vec![
+        "openai.com".to_string(),
+        "anthropic.com".to_string(), 
+        "github.com".to_string(),
+        "reddit.com".to_string(),
+        "twitter.com".to_string(),
+        "medium.com".to_string(),
+        "substack.com".to_string(),
+        "hackernews.com".to_string(),
+    ])
+}
+
+async fn quantum_crawl_with_paywall_bypass(
+    target: &str, 
+    crawler: &Arc<crate::crawler::Crawler>
+) -> Result<Vec<crate::crawler::CrawlResult>, Box<dyn Error + Send + Sync>> {
+    info!("🕷️ Quantum crawling with paywall bypass: {}", target);
+    
+    // First, try normal crawling
+    let results = crawler.crawl(&format!("http://{}", target), 2).await?;
+    
+    // Then, launch Python paywall buster for any paywalled content
+    for result in &results {
+        if is_paywalled_content(&result.url) {
+            launch_paywall_buster(&result.url).await?;
+        }
+    }
+    
+    Ok(results)
+}
+
+fn is_paywalled_content(url: &str) -> bool {
+    let paywalled_domains = [
+        "medium.com",
+        "substack.com", 
+        "wsj.com",
+        "nytimes.com",
+        "ft.com",
+        "economist.com",
+        "bloomberg.com",
+        "reuters.com"
+    ];
+    
+    paywalled_domains.iter().any(|domain| url.contains(domain))
+}
+
+async fn launch_paywall_buster(url: &str) -> Result<(), Box<dyn Error + Send + Sync>> {
+    info!("🧠 Launching paywall buster for: {}", url);
+    
+    let _output = Command::new("python3")
+        .args([
+            "paywall_buster.py",
+            "--url", url,
+            "--captcha-key", "your-2captcha-key-here"
+        ])
+        .output()?;
+    
+    Ok(())
+}
+
+async fn bypass_paywall_content(result: &crate::crawler::CrawlResult) -> Result<String, Box<dyn Error + Send + Sync>> {
+    // This would integrate with your Python paywall buster
+    // For now, return the original content
+    Ok(result.content.clone())
+}
+
+async fn output_quantum_findings(
+    target: &str,
+    findings: &[crate::vulnerability_matcher::Finding],
+    quantum_scorer: &Arc<crate::quantum_osint::QuantumScorer>
+) -> Result<(), Box<dyn Error + Send + Sync>> {
+    println!("\n🌟 QUANTUM FINDINGS for {}", target);
+    println!("═══════════════════════════════════════");
+    
+    for finding in findings {
+        let score = quantum_scorer.score_finding(finding);
+        let emoji = match finding.severity.as_str() {
+            "Critical" => "🚨",
+            "High" => "🔥", 
+            "Medium" => "⚠️",
+            "Low" => "ℹ️",
+            _ => "🔍"
+        };
+        
+        println!(
+            "{} [{}] {} - {} (Quantum Score: {:.2})",
+            emoji, finding.id, finding.finding_type, finding.description, score
+        );
+    }
+    
+    println!("═══════════════════════════════════════\n");
+    Ok(())
+}

@@ -1,0 +1,254 @@
+# OmniDork Unified Scanner Configuration
+# =====================================
+
+# Scanner Settings
+scanner:
+  # Maximum concurrent operations
+  max_threads: 50
+  # Request timeout in seconds
+  timeout: 30
+  # User agents for rotation
+  user_agents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/125.0.6422.113 Safari/537.36"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_4_1) AppleWebKit/605.1.15 Safari/605.1.15"
+    - "Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 Chrome/124.0.6367.116 Mobile Safari/537.36"
+
+# Proxy Configuration
+proxy:
+  # Enable RapidProxyScan integration
+  use_rapidproxyscan: true
+  # Maximum proxies to maintain in pool
+  max_proxies: 1000
+  # Proxy refresh interval in minutes
+  refresh_interval: 15
+  # Custom proxy test endpoint (THIS IS IMPORTANT)
+  test_endpoint: "http://proxy-test.fastping.it.com/"  
+  # Proxy sources
+  sources:
+    - "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt"
+    - "https://raw.githubusercontent.com/clarketm/proxy-list/master/proxy-list-raw.txt"
+    - "https://raw.githubusercontent.com/sunny9577/proxy-scraper/master/proxies.txt"
+    - "https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all"
+    - "https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-http.txt"
+  # Elite proxy sources (prioritized)
+  elite_sources:
+    - "http://11.22.33.44:3128/elite.txt"  # Your private source
+  # Validation settings
+  validation:
+    rounds: 3
+    mode: "majority"  # any, majority, all
+    check_anonymity: true
+    timeout: 5.0
+
+# Dorking Configuration
+dorking:
+  enabled: true
+  # Search engines to use
+  engines:
+    - google
+    - bing
+    - duckduckgo
+  # Default dorks (can be overridden via CLI)
+  default_dorks:
+    # Sensitive files
+    - 'filetype:pdf "confidential"'
+    - 'filetype:xlsx "internal use only"'
+    - 'filetype:sql'
+    - 'filetype:env'
+    - 'filetype:config'
+    - 'filetype:ini'
+    - 'filetype:log'
+    
+    # Admin interfaces
+    - 'inurl:admin'
+    - 'inurl:administrator'
+    - 'inurl:adminpanel'
+    - 'inurl:controlpanel'
+    - 'inurl:dashboard'
+    - 'intitle:"admin login"'
+    
+    # Development/debug
+    - 'inurl:debug'
+    - 'inurl:test'
+    - 'inurl:dev'
+    - 'inurl:staging'
+    - 'intext:"debug mode"'
+    
+    # API exposure
+    - 'inurl:api'
+    - 'inurl:v1'
+    - 'inurl:v2'
+    - 'inurl:swagger'
+    - 'inurl:graphql'
+    - 'intext:"api key"'
+    - 'intext:"api_key"'
+    
+    # Credentials
+    - 'intext:password'
+    - 'intext:username'
+    - 'intext:"private key"'
+    - 'intext:credentials'
+    
+    # Backups
+    - 'inurl:backup'
+    - 'inurl:bak'
+    - 'inurl:old'
+    - 'filetype:bak'
+    
+    # Version control
+    - 'inurl:.git'
+    - 'inurl:.svn'
+    - 'inurl:.hg'
+    
+    # CMS specific
+    - 'inurl:wp-content'
+    - 'inurl:wp-admin'
+    - 'inurl:wp-config'
+    - 'inurl:joomla'
+    - 'inurl:drupal'
+
+# Crawler Configuration
+crawler:
+  enabled: true
+  max_depth: 3
+  concurrent_requests: 20
+  # Follow redirects
+  follow_redirects: true
+  # Respect robots.txt
+  respect_robots: false
+  # Max pages per domain
+  max_pages: 1000
+  # Interesting paths to prioritize
+  priority_paths:
+    - "/admin"
+    - "/api"
+    - "/backup"
+    - "/config"
+    - "/debug"
+    - "/test"
+    - "/.git"
+    - "/wp-admin"
+    - "/phpmyadmin"
+
+# Vulnerability Detection
+vulnerability:
+  # Patterns file
+  patterns_file: "vulnerability_patterns.json"
+  # Quantum scoring threshold (0-100)
+  quantum_threshold: 50
+  # Check for specific vulnerabilities
+  checks:
+    - sql_injection
+    - xss
+    - xxe
+    - ssrf
+    - lfi
+    - rfi
+    - open_redirect
+    - api_keys
+    - credentials
+    - sensitive_data
+
+# Evasion Settings
+evasion:
+  # Browser automation
+  browser:
+    headless: true
+    disable_images: true
+    disable_javascript: false
+    window_size: "1920x1080"
+    
+  # CAPTCHA solving
+  captcha:
+    enabled: false
+    api_key: ""  # 2Captcha API key
+    max_retries: 30
+    poll_interval: 5
+    
+  # Paywall bypass
+  paywall:
+    enabled: true
+    # Sites to attempt bypass
+    sites:
+      - medium.com
+      - wsj.com
+      - nytimes.com
+      - ft.com
+      - economist.com
+      - bloomberg.com
+      - businessinsider.com
+    # Methods to try
+    methods:
+      - archive_org
+      - google_cache
+      - outline_com
+      - 12ft_ladder
+      - reader_mode
+      
+  # Request randomization
+  randomization:
+    # Random delay between requests (seconds)
+    delay_min: 1
+    delay_max: 5
+    # Randomize user agent
+    rotate_user_agent: true
+    # Randomize proxy per request
+    rotate_proxy: true
+
+# Output Configuration
+output:
+  # Report format
+  format: "json"  # json, html, markdown
+  # Include raw responses
+  include_raw: false
+  # Screenshot suspicious pages
+  screenshot: true
+  # Export vulnerabilities to
+  export_to:
+    - file
+    - webhook
+  # Webhook settings
+  webhook:
+    url: ""
+    headers:
+      Authorization: "Bearer YOUR_TOKEN"
+
+# Performance Tuning
+performance:
+  # DNS cache
+  dns_cache: true
+  # Connection pooling
+  connection_pool_size: 100
+  # Memory limits
+  max_memory_mb: 4096
+  # CPU limits
+  max_cpu_percent: 80
+
+# Advanced Features
+advanced:
+  # Quantum resonance optimization
+  quantum:
+    enabled: true
+    prime_factorization_limit: 1000
+    biorthogonal_dimensions: 64
+    
+  # Machine learning
+  ml:
+    enabled: false
+    model_path: "models/vulnerability_classifier.pkl"
+    
+  # Clustering similar findings
+  clustering:
+    enabled: true
+    similarity_threshold: 0.8
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "omnidork.log"
+  # Separate logs for different components
+  component_logs:
+    proxy: "logs/proxy.log"
+    dork: "logs/dork.log"
+    crawler: "logs/crawler.log"
+    vulnerability: "logs/vulnerability.log"

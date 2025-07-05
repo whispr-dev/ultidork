@@ -1,0 +1,114 @@
+
+import sys
+import json
+import time
+import socket
+from pathlib import Path
+from urllib.parse import urlparse
+from colorama import Fore, Style, init
+from rapidproxyscan import ProxyTester
+
+init(autoreset=True)
+
+TARGET_JSON = "../utidork's_target_list_first.json"
+EXTRA_PROXIES = "../elite_proxies.txt"
+EXTRA_UAS = "../deep_useragents.txt"
+MAX_RETRIES = 3
+INITIAL_DELAY = 1
+
+proxy_tester = ProxyTester()
+
+def load_and_clean_targets():
+    targets = []
+    json_path = Path(TARGET_JSON)
+    if not json_path.exists():
+        print(f"{Fore.RED}[-] Target list {json_path} not found.{Style.RESET_ALL}")
+        sys.exit(1)
+
+    print(f"{Fore.CYAN}[+] Loading targets from {json_path}{Style.RESET_ALL}")
+    with open(json_path, "r", encoding="utf-8") as f:
+        try:
+            raw = json.load(f)
+            for t in raw:
+                clean = t.replace(".to_string()", "").replace('\"', "").replace('"', "").strip()
+                if clean and not clean.startswith(".") and clean != "*":
+                    targets.append(clean)
+        except Exception as e:
+            print(f"{Fore.RED}[-] JSON load error: {e}{Style.RESET_ALL}")
+            sys.exit(1)
+
+    if not targets:
+        print(f"{Fore.RED}[-] No valid targets after cleaning.{Style.RESET_ALL}")
+        sys.exit(1)
+    return targets
+
+def load_list(path):
+    file_path = Path(path)
+    if file_path.exists():
+        with open(file_path, "r", encoding="utf-8") as f:
+            return [line.strip() for line in f if line.strip()]
+    return []
+
+async def scan_with_escalation(domain, elite_proxies, elite_uas):
+    parsed = urlparse(domain)
+    host = parsed.netloc or parsed.path
+    proxy_url = f"http://{host}:8080"
+    delay = INITIAL_DELAY
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        print(f"{Fore.YELLOW}[>] Attempt {attempt} for {host}{Style.RESET_ALL}")
+
+        proxy = None
+        ua = None
+
+        if attempt == MAX_RETRIES and elite_proxies:
+            proxy = elite_proxies[0]
+            print(f"{Fore.CYAN}[*] Using stable proxy: {proxy}{Style.RESET_ALL}")
+
+        if attempt == MAX_RETRIES and elite_uas:
+            ua = elite_uas[0]
+            print(f"{Fore.CYAN}[*] Using rare user-agent: {ua}{Style.RESET_ALL}")
+
+        try:
+            result = await proxy_tester.test_proxy(proxy_url, proxy_override=proxy, ua_override=ua)
+            if result.get("is_usable"):
+                print(f"{Fore.GREEN}[✔] {host} passed ({result['speed_rating']}, {result['security_level']}){Style.RESET_ALL}")
+                return True
+            else:
+                print(f"{Fore.RED}[-] {host} failed: {result['description']}{Style.RESET_ALL}")
+        except Exception as e:
+            print(f"{Fore.RED}[-] Error testing {host}: {e}{Style.RESET_ALL}")
+
+        if attempt < MAX_RETRIES:
+            print(f"{Fore.CYAN}[*] Backing off {delay} seconds before retry...{Style.RESET_ALL}")
+            time.sleep(delay)
+            delay *= 2
+
+    print(f"{Fore.RED}[X] {host} failed after {MAX_RETRIES} attempts{Style.RESET_ALL}")
+    return False
+
+def main():
+    import asyncio
+
+    targets = load_and_clean_targets()
+    elite_proxies = load_list(EXTRA_PROXIES)
+    elite_uas = load_list(EXTRA_UAS)
+    failed = []
+
+    print(f"{Fore.CYAN}[+] Loaded {len(targets)} targets. Starting scans...{Style.RESET_ALL}\n")
+
+    for domain in targets:
+        success = asyncio.run(scan_with_escalation(domain, elite_proxies, elite_uas))
+        if not success:
+            failed.append(domain)
+        time.sleep(1)
+
+    if failed:
+        print(f"\n{Fore.RED}[!] {len(failed)} targets failed completely:{Style.RESET_ALL}")
+        for f in failed:
+            print(f" - {f}")
+
+    print(f"\n{Fore.GREEN}[✓] Scanning complete.{Style.RESET_ALL}")
+
+if __name__ == "__main__":
+    main()
