@@ -1,22 +1,22 @@
-aiohttp>=3.9.0
-beautifulsoup4==4.12.0
-colorama>=0.4.6
-Flask>=2.3.0
-gunicorn>=20.0.0 # For serving your Flask app in production
-python-dotenv>=1.0.0 # If you use .env files for your CAPTCHA_API_KEY or other secrets
-selenium>=4.0.0 # For BrowserController if using real browsers
-webdriver-manager>=4.0.0 # Helpful for managing WebDriver binaries for Selenium
-cryptography>=42.0.0
-redis
-defang
-har2tree
-lacuscore
-pylacus==1.15.0
-playwrightcapture
-pymisp
-pysecuritytxt
-pylookyloomonitoring
-defang
-har2tree
+aiohttp==3.9.5
+beautifulsoup4==4.12.3
+colorama==0.4.6
+Flask==2.3.3
+gunicorn==20.1.0
+python-dotenv==1.0.1
+selenium==4.18.1
+webdriver-manager==4.0.1
+cryptography==42.0.5
+redis==5.0.4
 
+defang==0.5.3
+har2tree==1.1.2
+lacuscore>=1.2.4
+pylacus==1.13.1
+playwrightcapture==1.12.1
+pymisp==1.3.0
+pysecuritytxt==1.1.1
+pylookyloomonitoring==1.1.4
 
+# Optional: For har2tree visualization (needed by ete3 dependency)
+ete3==3.1.2
